@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.0/css/all.css" integrity="sha384-Mmxa0mLqhmOeaE8vgOSbKacftZcsNYDjQzuCOm6D02luYSzBG8vpaOykv9lFQ51Y" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/delilato_menu.css">
+    <title>Menu</title>
+    <script>
+        window.onload=function(){
+            let sidebarMenu = document.querySelector("#sidebar_menu");
+            let sidebarSearch = document.querySelector("#sidebar_search");
+            let menubarSide = document.querySelector("#menubar_side");            
+            let sidebarWrap = document.querySelector("#sidebarWrap");
+            
+            sidebarMenu.onclick=function(){                
+                menubarSide.style.display='block';
+            }
+            menubarSide.onmouseleave=function(){
+                this.style.display='none';
+            }
+            sidebarWrap.onmouseleave=function(){
+                menubarSide.style.display='none';
+            }
+
+            document.querySelector('.search_txt').onfocus=function(){
+                this.placeholder='';
+            }
+            document.querySelector('.search_txt').onblur=function(){
+                this.placeholder='검색어를 입력하세요';
+            }
+
+
+            
+            let searchIcon=document.querySelector('#search_icon');
+            let searchTxt2=document.querySelector('.search_txt2');
+
+            searchIcon.onclick = function(){
+                searchTxt2.style.display='block';
+            }
+            searchTxt2.onmouseleave = function(){
+                searchTxt2.style.display='none';
+            }
+        }
+
+    </script>
+    <style>
+        *{margin:0;padding: 0;}
+        #logo, #login, #menubar, section, footer{position: relative;}
+        #sidebarWrap{
+            width: 100%;                        
+            height: auto;
+            position: relative;
+        }
+        #sidebar{position: absolute;top: 0;left: 0;}
+        #menubar_side{z-index: 999999999;position: absolute;top: 41px;left: 0;width:100%;}
+    </style>
+</head>
+<body>
+    <header>
+        <div id="logo"><a href="index.html"><img src="img/logo.png" alt="logo"></a></div>
+        <div id="login"><a href="#">로그인</a></div>
+        <div id="menubar">
+            <ul>
+                <li><a href="delilato_about.html">ABOUT DELILATO</a></li>
+                <li><a href="delilato_menu.html">MENU</a></li>
+                <li><a href="delilato_event.html">EVENT</a></li>
+                <li><a href="delilato_store.html">STORE</a></li>
+                <li>
+                    <div class="search_box">
+                        <input type="text" class="search_txt" name="" placeholder="검색어를 입력하세요">
+                        <a href="#"><img src="img/search.png" alt=""></a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div id="sidebarWrap">
+            <ul id="sidebar">
+                <li id=sidebar_menu><a href="#"><img src="img/menubar.png" alt=""></a></li>
+                <div id="sidebar_search">
+                    <input type="text" class="search_txt2" name="" placeholder="검색어를 입력하세요">
+                    <a href="#"><img src="img/search.png" alt="" id="search_icon"></a>
+                </div>
+            </ul>
+            <div id="menubar_side">
+                <ul>
+                    <li><a href="delilato_about.html">ABOUT DELILATO</a></li>
+                    <li><a href="delilato_menu.html">MENU</a></li>
+                    <li><a href="delilato_event.html">EVENT</a></li>
+                    <li><a href="delilato_store.html">STORE</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <div class="clear"></div>
+    <!--e.header-->
+
+    <section id="signature_wrap">
+        <h3>SIGNATURE</h3>
+        <div id="signature">
+            <div class="s1">
+                <div class="s_img"><a href="delilato_menuSub.html"><img src="img/avocado.png" alt=""></a></div>
+                <h4><a href="delilato_menuSub.html"></a>아보카도</a></h4>
+                <h6><a href="delilato_menuSub.html"></a>#숲속의버터<br>
+                    #고급진</a></h6>
+            </div>
+            <div class="s1">
+                <div class="s_img"><a href="delilato_menuSub.html"><img src="img/lizzo.png" alt=""></a></div>
+                <h4><a href="delilato_menuSub.html">리조</h4>
+                <h6><a href="delilato_menuSub.html">#쌀알그대로</a><br>
+                    #담백한</a></h6>
+            </div>
+            <div class="s1">
+                <div class="s_img"><a href="delilato_menuSub.html"><img src="img/wasabi.png" alt=""></a></div>
+                <h4><a href="delilato_menuSub.html">와사비</h4>
+                <h6><a href="delilato_menuSub.html">#코끝이찡<br>
+                    #알싸한</a></h6>
+            </div>
+            <div class="s1">
+                <div class="s_img"><a href="delilato_menuSub.html"><img src="img/passionpeachmango.png" alt=""></a></div>
+                <h4><a href="delilato_menuSub.html">패션망고피치</a></h4>
+                <h6><a href="delilato_menuSub.html">#노란과일집합<br>
+                    #상큼달달</a></h5>
+            </div>
+        </div>
+    </section>
+    <!--e.signature-->
+
+    <section id="all_wrap">
+        <h3>ALL</h3>
+        <div id="all">
+            <div class="all_1">
+                <div class="a_b_n">
+                    <div class="a_img"><a href="delilato_menuSub.html"><img src="img/lemon.png" alt=""></a></div>
+                    <div class="a_hidden"><img src="img/a_best.png" alt=""></div>
+                    <h5><a href="delilato_menuSub.html">레몬</a></h5>
+                    <p><a href="delilato_menuSub.html">#비타민C풍부<br>
+                        #새콤상큼</a></p>
+                </div>
+                <div class="a1">
+                    <div class="a_img"><a href="delilato_menuSub.html"><img src="img/hodu.png" alt=""></a></div>
+                    <div class="a_best"><img src="img/a_best.png" alt=""></div>
+                    <h5><a href="delilato_menuSub.html">호두</a></h5>
+                    <p><a href="delilato_menuSub.html">#호두식감GOOD<br>
+                        #고소한</a></p>
+                </div>
+                <div class="a1">
+                    <div class="a_img"><a href="delilato_menuSub.html"><img src="img/wasabi2.png" alt=""></a></div>
+                    <div class="a_signature"><img src="img/a_signature.png" alt=""></div>
+                    <h5><a href="delilato_menuSub.html">와사비</a></h5>
+                    <p><a href="delilato_menuSub.html">#코끝이찡<br>
+                        #알싸한</a></p>
+                </div>
+                <div class="a1">
+                    <div class="a_img"><a href="delilato_menuSub.html"><img src="img/pistachio.png" alt=""></a></div>
+                    <div class="a_best"><img src="img/a_best.png" alt=""></div>
+                    <h5><a href="delilato_menuSub.html">피스타치오</a></h5>
+                    <p><a href="delilato_menuSub.html">#REAL피스타치오<br>
+                        #고소한</a></p>
+                </div>
+                <div class="a1">
+                    <div class="a_img"><a href="delilato_menuSub.html"><img src="img/cherry.png" alt=""></a></div>
+                    <div class="a_best"><img src="img/a_best.png" alt=""></div>
+                    <h5><a href="delilato_menuSub.html">체리</a></h5>
+                    <p><a href="delilato_menuSub.html">#탱글탱글체리과육<br>
+                        #달콤상큼</a></p>
+                </div>
+            </div>
+
+            <div class="all_1">
+                <div class="a_b_n">
+                    <div class="a_img"><a href="delilato_menuSub.html"><img src="img/fig.png" alt=""></a></div>
+                    <div class="a_hidden"><img src="img/a_best.png" alt=""></div>
+                    <h5><a href="delilato_menuSub.html">무화과</a></h5>
+                    <p><a href="delilato_menuSub.html">#과육이톡톡<br>
+                        #달달한</a></p>
+                </div>
+                <div class="a1">
+                    <div class="a_img"><a href="delilato_menuSub.html"><img src="img/strawberry.png" alt=""></a></div>
+                    <div class="a_best"><img src="img/a_best.png" alt=""></div>
+                    <h5><a href="delilato_menuSub.html">딸기</a></h5>
+                    <p><a href="delilato_menuSub.html">#비타민가득<br>
+                        #새콤상큼</a></p>
+                </div>
+                <div class="a_b_n">
+                    <div class="a_img"><a href="delilato_menuSub.html"><img src="img/vanilla.png" alt=""></a></div>
+                    <div class="a_hidden"><img src="img/a_best.png" alt=""></div>
+                    <h5><a href="delilato_menuSub.html">바닐라</a></h5>
+                    <p><a href="delilato_menuSub.html">#풍부한향<br>
+                        #고품격의</a></p>
+                </div>
+                <div class="a1">
+                    <div class="a_img"><a href="delilato_menuSub.html"><img src="img/passionpeachmango2.png" alt=""></a></div>
+                    <div class="a_signature"><img src="img/a_signature.png" alt=""></div>
+                    <h5><a href="delilato_menuSub.html">패션망고피치</a></h5>
+                    <p><a href="delilato_menuSub.html">#노란과일집합<br>
+                        #상큼달달</a></p>
+                </div>
+                <div class="a_b_n">
+                    <div class="a_img"><a href="delilato_menuSub.html"><img src="img/yogurt.png" alt=""></a></div>
+                    <div class="a_hidden"><img src="img/a_best.png" alt=""></div>
+                    <h5><a href="delilato_menuSub.html">요거트</a></h5>
+                    <p><a href="delilato_menuSub.html">#깨끗하고신선한<br>
+                        #진한</a></p>
+                </div>
+            </div>
+
+            <div class="all_1">
+                <div class="a1">
+                    <div class="a_img"><a href="delilato_menuSub.html"><img src="img/avocado2.png" alt=""></a></div>
+                    <div class="a_signature"><img src="img/a_signature.png" alt=""></div>
+                    <h5><a href="delilato_menuSub.html">아보카도</a></h5>
+                    <p><a href="delilato_menuSub.html">#숲속의버터<br>
+                        #고급진</a></p>
+                </div>
+                <div class="a1">
+                    <div class="a_img"><a href="delilato_menuSub.html"><img src="img/blueberry.png" alt=""></a></div>
+                    <div class="a_best"><img src="img/a_best.png" alt=""></div>
+                    <h5><a href="delilato_menuSub.html">블루베리</a></h5>
+                    <p><a href="delilato_menuSub.html">#세계10대슈퍼푸드<br>
+                        #새콤달콤</a></p>
+                </div>
+                <div class="a_b_n">
+                    <div class="a_img"><a href="delilato_menuSub.html"><img src="img/dragonfruit.png" alt=""></a></div>
+                    <div class="a_hidden"><img src="img/a_best.png" alt=""></div>
+                    <h5><a href="delilato_menuSub.html">용과깔라만시</a></h5>
+                    <p><a href="delilato_menuSub.html">#침샘자극<br>
+                        #새콤한</a></p>
+                </div>
+               
+                <div class="a_b_n">
+                    <div class="a_img"><a href="delilato_menuSub.html"><img src="img/grapefruit.png" alt=""></a></div>
+                    <div class="a_hidden"><img src="img/a_best.png" alt=""></div>
+                    <h5><a href="delilato_menuSub.html">자몽</a></h5>
+                    <p><a href="delilato_menuSub.html">#비타민풍부<br>
+                        #상큼쌉싸름</a></p>
+                </div>
+                <div class="a_b_n">
+                    <div class="a_img"><a href="delilato_menuSub.html"><img src="img/darkchoco.png" alt=""></a></div>
+                    <div class="a_hidden"><img src="img/a_best.png" alt=""></div>
+                    <h5><a href="delilato_menuSub.html">다크초코</a></h5>
+                    <p><a href="delilato_menuSub.html">#초코칩톡톡<br>
+                        #진한</a></p>
+                </div>
+            </div>
+
+            <div class="all_1">
+                <div class="a1">
+                    <div class="a_img"><a href="delilato_menuSub.html"><img src="img/lizzo2.png" alt=""></a></div>
+                    <div class="a_signature"><img src="img/a_signature.png" alt=""></div>
+                    <h5><a href="delilato_menuSub.html">리조</a></h5>
+                    <p><a href="delilato_menuSub.html">#쌀알그대로<br>
+                        #담백한</a></p>
+                </div>
+                <div class="a_b_n">
+                    <div class="a_img"><a href="delilato_menuSub.html"><img src="img/mixgrain.png" alt=""></a></div>
+                    <div class="a_hidden"><img src="img/a_best.png" alt=""></div>
+                    <h5><a href="delilato_menuSub.html">미숫가루</a></h5>
+                    <p><a href="delilato_menuSub.html">#웰빙젤라또<br>
+                        #고소한</a></p>
+                </div>
+                <div class="a_b_n">
+                    <div class="a_img"><a href="delilato_menuSub.html"><img src="img/pannacotta.png" alt=""></a></div>
+                    <div class="a_hidden"><img src="img/a_best.png" alt=""></div>
+                    <h5><a href="delilato_menuSub.html">판나코타</a></h5>
+                    <p><a href="delilato_menuSub.html">#이탈리아우유푸딩<br>
+                        #부드러운</a></p>
+                </div>
+                <div class="a1">
+                    <div class="a_img"><a href="delilato_menuSub.html"><img src="img/orange.png" alt=""></a></div>
+                    <div class="a_best"><img src="img/a_best.png" alt=""></div>
+                    <h5><a href="delilato_menuSub.html">오렌지</a></h5>
+                    <p><a href="delilato_menuSub.html">#과즙톡톡<br>
+                        #상큼</a></p>
+                </div>
+                <div class="a_b_n">
+                    <div class="a_img"><a href="delilato_menuSub.html"><img src="img/greentea.png" alt=""></a></div>
+                    <div class="a_hidden"><img src="img/a_best.png" alt=""></div>
+                    <h5><a href="delilato_menuSub.html">녹차라떼</a></h5>
+                    <p><a href="delilato_menuSub.html">#녹차향입안가득<br>
+                        #쌉싸름한</a></p>
+                </div>
+            </div>
+        </div>
+
+        <div id="all2">
+            <div class="all_1">
+                <div class="a_b_n">
+                    <div class="a_img"><a href="delilato_menuSub.html"><img src="img/lemon.png" alt=""></a></div>
+                    <div class="a_hidden"><img src="img/a_best.png" alt=""></div>
+                    <h5><a href="delilato_menuSub.html">레몬</a></h5>
+                    <p><a href="delilato_menuSub.html">#비타민C풍부<br>
+                        #새콤상큼</a></p>
+                </div>
+                <div class="a1">
+                    <div class="a_img"><a href="delilato_menuSub.html"><img src="img/hodu.png" alt=""></a></div>
+                    <div class="a_best"><img src="img/a_best.png" alt=""></div>
+                    <h5><a href="delilato_menuSub.html">호두</a></h5>
+                    <p><a href="delilato_menuSub.html">#호두식감GOOD<br>
+                        #고소한</a></p>
+                </div>
+                <div class="a1">
+                    <div class="a_img"><a href="delilato_menuSub.html"><img src="img/wasabi2.png" alt=""></a></div>
+                    <div class="a_signature"><img src="img/a_signature.png" alt=""></div>
+                    <h5><a href="delilato_menuSub.html">와사비</a></h5>
+                    <p><a href="delilato_menuSub.html">#코끝이찡<br>
+                        #알싸한</a></p>
+                </div>
+                <div class="a1">
+                    <div class="a_img"><a href="delilato_menuSub.html"><img src="img/pistachio.png" alt=""></a></div>
+                    <div class="a_best"><img src="img/a_best.png" alt=""></div>
+                    <h5><a href="delilato_menuSub.html">피스타치오</a></h5>
+                    <p><a href="delilato_menuSub.html">#REAL피스타치오<br>
+                        #고소한</a></p>
+                </div>
+            </div>
+
+            <div class="all_1">
+                <div class="a1">
+                    <div class="a_img"><a href="delilato_menuSub.html"><img src="img/cherry.png" alt=""></a></div>
+                    <div class="a_best"><img src="img/a_best.png" alt=""></div>
+                    <h5><a href="delilato_menuSub.html">체리</a></h5>
+                    <p><a href="delilato_menuSub.html">#탱글탱글체리과육<br>
+                        #달콤상큼</a></p>
+                </div>
+                <div class="a_b_n">
+                    <div class="a_img"><a href="delilato_menuSub.html"><img src="img/fig.png" alt=""></a></div>
+                    <div class="a_hidden"><img src="img/a_best.png" alt=""></div>
+                    <h5><a href="delilato_menuSub.html">무화과</a></h5>
+                    <p><a href="delilato_menuSub.html">#과육이톡톡<br>
+                        #달달한</a></p>
+                </div>
+                <div class="a1">
+                    <div class="a_img"><a href="delilato_menuSub.html"><img src="img/strawberry.png" alt=""></a></div>
+                    <div class="a_best"><img src="img/a_best.png" alt=""></div>
+                    <h5><a href="delilato_menuSub.html">딸기</a></h5>
+                    <p><a href="delilato_menuSub.html">#비타민가득<br>
+                        #새콤상큼</a></p>
+                </div>
+                <div class="a_b_n">
+                    <div class="a_img"><a href="delilato_menuSub.html"><img src="img/vanilla.png" alt=""></a></div>
+                    <div class="a_hidden"><img src="img/a_best.png" alt=""></div>
+                    <h5><a href="delilato_menuSub.html">바닐라</a></h5>
+                    <p><a href="delilato_menuSub.html">#풍부한향<br>
+                        #고품격의</a></p>
+                </div>
+                
+            </div>
+
+            <div class="all_1">
+                <div class="a1">
+                    <div class="a_img"><a href="delilato_menuSub.html"><img src="img/passionpeachmango2.png" alt=""></a></div>
+                    <div class="a_signature"><img src="img/a_signature.png" alt=""></div>
+                    <h5><a href="delilato_menuSub.html">패션망고피치</a></h5>
+                    <p><a href="delilato_menuSub.html">#노란과일집합<br>
+                        #상큼달달</a></p>
+                </div>
+                <div class="a_b_n">
+                    <div class="a_img"><a href="delilato_menuSub.html"><img src="img/yogurt.png" alt=""></a></div>
+                    <div class="a_hidden"><img src="img/a_best.png" alt=""></div>
+                    <h5><a href="delilato_menuSub.html">요거트</a></h5>
+                    <p><a href="delilato_menuSub.html">#깨끗하고신선한<br>
+                        #진한</a></p>
+                </div>
+                <div class="a1">
+                    <div class="a_img"><a href="delilato_menuSub.html"><img src="img/avocado2.png" alt=""></a></div>
+                    <div class="a_signature"><img src="img/a_signature.png" alt=""></div>
+                    <h5><a href="delilato_menuSub.html">아보카도</a></h5>
+                    <p><a href="delilato_menuSub.html">#숲속의버터<br>
+                        #고급진</a></p>
+                </div>
+                <div class="a1">
+                    <div class="a_img"><a href="delilato_menuSub.html"><img src="img/blueberry.png" alt=""></a></div>
+                    <div class="a_best"><img src="img/a_best.png" alt=""></div>
+                    <h5><a href="delilato_menuSub.html">블루베리</a></h5>
+                    <p><a href="delilato_menuSub.html">#세계10대슈퍼푸드<br>
+                        #새콤달콤</a></p>
+                </div>
+                
+            </div>
+
+            <div class="all_1">
+                <div class="a_b_n">
+                    <div class="a_img"><a href="delilato_menuSub.html"><img src="img/dragonfruit.png" alt=""></a></div>
+                    <div class="a_hidden"><img src="img/a_best.png" alt=""></div>
+                    <h5><a href="delilato_menuSub.html">용과깔라만시</a></h5>
+                    <p><a href="delilato_menuSub.html">#침샘자극<br>
+                        #새콤한</a></p>
+                </div>
+                
+                <div class="a_b_n">
+                    <div class="a_img"><a href="delilato_menuSub.html"><img src="img/grapefruit.png" alt=""></a></div>
+                    <div class="a_hidden"><img src="img/a_best.png" alt=""></div>
+                    <h5><a href="delilato_menuSub.html">자몽</a></h5>
+                    <p><a href="delilato_menuSub.html">#비타민풍부<br>
+                        #상큼쌉싸름</a></p>
+                </div>
+                <div class="a_b_n">
+                    <div class="a_img"><a href="delilato_menuSub.html"><img src="img/darkchoco.png" alt=""></a></div>
+                    <div class="a_hidden"><img src="img/a_best.png" alt=""></div>
+                    <h5><a href="delilato_menuSub.html">다크초코</a></h5>
+                    <p><a href="delilato_menuSub.html">#초코칩톡톡<br>
+                        #진한</a></p>
+                </div>
+                <div class="a1">
+                    <div class="a_img"><a href="delilato_menuSub.html"><img src="img/lizzo2.png" alt=""></a></div>
+                    <div class="a_signature"><img src="img/a_signature.png" alt=""></div>
+                    <h5><a href="delilato_menuSub.html">리조</a></h5>
+                    <p><a href="delilato_menuSub.html">#쌀알그대로<br>
+                        #담백한</a></p>
+                </div>
+                
+            </div>
+            <div class="all_1">
+                <div class="a_b_n">
+                    <div class="a_img"><a href="delilato_menuSub.html"><img src="img/mixgrain.png" alt=""></a></div>
+                    <div class="a_hidden"><img src="img/a_best.png" alt=""></div>
+                    <h5><a href="delilato_menuSub.html">미숫가루</a></h5>
+                    <p><a href="delilato_menuSub.html">#웰빙젤라또<br>
+                        #고소한</a></p>
+                </div>
+                <div class="a_b_n">
+                    <div class="a_img"><a href="delilato_menuSub.html"><img src="img/pannacotta.png" alt=""></a></div>
+                    <div class="a_hidden"><img src="img/a_best.png" alt=""></div>
+                    <h5><a href="delilato_menuSub.html">판나코타</a></h5>
+                    <p><a href="delilato_menuSub.html">#이탈리아우유푸딩<br>
+                        #부드러운</a></p>
+                </div>
+                <div class="a1">
+                    <div class="a_img"><a href="delilato_menuSub.html"><img src="img/orange.png" alt=""></a></div>
+                    <div class="a_best"><img src="img/a_best.png" alt=""></div>
+                    <h5><a href="delilato_menuSub.html">오렌지</a></h5>
+                    <p><a href="delilato_menuSub.html">#과즙톡톡<br>
+                        #상큼</a></p>
+                </div>
+                <div class="a_b_n">
+                    <div class="a_img"><a href="delilato_menuSub.html"><img src="img/greentea.png" alt=""></a></div>
+                    <div class="a_hidden"><img src="img/a_best.png" alt=""></div>
+                    <h5><a href="delilato_menuSub.html">녹차라떼</a></h5>
+                    <p><a href="delilato_menuSub.html">#녹차향입안가득<br>
+                        #쌉싸름한</a></p>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+
+    <footer>
+        <div class="footer1">
+          <img src="img/footer.png" alt="footer" class="footer_logo">
+          <img src="img/line.png" alt="line" class="line">
+          
+          <div id="left">	
+              <ul  id="ADDRESS">
+                  <li><h1>ADDRESS.</h1></li>
+                  <li><p>경기도 안양시 동안구 평촌대로 127번길</p></li>
+              </ul>
+              <div class="clear"></div>
+              <ul id="TEL">
+                  <li><h1>TEL.</h1></li>
+                  <li><p>031-319-1996</p></li>
+              </ul>
+              <div class="clear"></div>
+              <ul id="sns">
+                  <il><a href="#"><img src="img/facebook.png" alt="facebook"></a></il>
+                  <il><a href="#"><img src="img/insta.png" alt="instagram"></a></il>
+                  <il><a href="#"><img src="img/blog.png" alt="blog"></a></il>
+              </ul>
+          </div>
+          
+          <p class="info">
+              사업자 등록번호. 199-60-31900 <br>
+              델리라또 대표 김현정  ｜  개인정보관리책임자 김현정 <br>
+              COPYRIGHT ⓒ2021 DELILATO. ALL RIGHTS RESERVED. <br>
+              개인정보취급방침  ｜  이용약관  ｜  문의처  ｜  이메일무단수집거부 <br>
+          </p>
+      </div>	
+    </footer>
+    <!--e.footer-->
+</body>
+</html> 
+    

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.0/css/all.css" integrity="sha384-Mmxa0mLqhmOeaE8vgOSbKacftZcsNYDjQzuCOm6D02luYSzBG8vpaOykv9lFQ51Y" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/index.css">
+    <title>한 입으로 더 진한 행복, DELILATO</title>
+    <script>
+        window.onload=function(){
+            let sidebarMenu = document.querySelector("#sidebar_menu");
+            let sidebarSearch = document.querySelector("#sidebar_search");
+            let menubarSide = document.querySelector("#menubar_side");            
+            let sidebarWrap = document.querySelector("#sidebarWrap");
+            
+            sidebarMenu.onclick=function(){                
+                menubarSide.style.display='block';
+            }
+            menubarSide.onmouseleave=function(){
+                this.style.display='none';
+            }
+            sidebarWrap.onmouseleave=function(){
+                menubarSide.style.display='none';
+            }
+
+            document.querySelector('.search_txt').onfocus=function(){
+                this.placeholder='';
+            }
+            document.querySelector('.search_txt').onblur=function(){
+                this.placeholder='검색어를 입력하세요';
+            }
+
+
+            
+            let searchIcon=document.querySelector('#search_icon');
+            let searchTxt2=document.querySelector('.search_txt2');
+
+            searchIcon.onclick = function(){
+                searchTxt2.style.display='block';
+            }
+            searchTxt2.onmouseleave = function(){
+                searchTxt2.style.display='none';
+            }
+        }
+
+    </script>
+    <style>
+        *{margin:0;padding: 0;}
+        #logo, #login, #menubar, section, footer{position: relative;}
+        #sidebarWrap{
+            width: 100%;                        
+            height: auto;
+            position: relative;
+        }
+        #sidebar{position: absolute;top: 0;left: 0;}
+        #menubar_side{z-index: 999999999;position: absolute;top: 41px;left: 0;width:100%;}
+    </style>
+</head>
+<body>
+    <header>
+        <div id="logo"><a href="index.html"><img src="img/logo.png" alt="logo"></a></div>
+        <div id="login"><a href="#">로그인</a></div>
+        <div id="menubar">
+            <ul>
+                <li><a href="delilato_about.html">ABOUT DELILATO</a></li>
+                <li><a href="delilato_menu.html">MENU</a></li>
+                <li><a href="delilato_event.html">EVENT</a></li>
+                <li><a href="delilato_store.html">STORE</a></li>
+                <li>
+                    <div class="search_box">
+                        <input type="text" class="search_txt" name="" placeholder="검색어를 입력하세요">
+                        <a href="#"><img src="img/search.png" alt=""></a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div id="sidebarWrap">
+            <ul id="sidebar">
+                <li id=sidebar_menu><a href="#"><img src="img/menubar.png" alt=""></a></li>
+                <div id="sidebar_search">
+                    <input type="text" class="search_txt2" name="" placeholder="검색어를 입력하세요">
+                    <a href="#"><img src="img/search.png" alt="" id="search_icon"></a>
+                </div>
+            </ul>
+            <div id="menubar_side">
+                <ul>
+                    <li><a href="delilato_about.html">ABOUT DELILATO</a></li>
+                    <li><a href="delilato_menu.html">MENU</a></li>
+                    <li><a href="delilato_event.html">EVENT</a></li>
+                    <li><a href="delilato_store.html">STORE</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="mainimg">
+            <div class="main_img"><!--<img src="img/main.png" alt="main">--></div>
+        </div>
+    </header>
+    <div class="clear"></div>
+    <!--e.header-->
+
+    <section id="best">
+        <div class="best1">
+            <h3>BEST</h3>
+            <!--<div id="best_img"></div>-->
+            <div id="menu">
+                <ul class="menu1">
+                    <li><a href="delilato_menuSub.html"><h4>피스타치오</h4></a></li>
+                    <li>#REAL피스타치오</li>
+                    <li>#고소한</li>
+                </ul>
+                <ul class="menu2">
+                    <li><a href="delilato_menuSub.html"><h4>오렌지</h4></a></li>
+                    <li>#과즙톡톡</li>
+                    <li>#상큼한</li>
+                </ul>
+                <ul class="menu3">
+                    <li><a href="delilato_menuSub.html"><h4>호두</h4></a></li>
+                    <li>#호두식감GOOD</li>
+                    <li>#고소한</li>
+                </ul>
+                <ul class="menu4">
+                    <li><a href="delilato_menuSub.html"><h4>블루베리</h4></a></li>
+                    <li>#세계10대슈퍼푸드</li>
+                    <li>#새콤달콤</li>
+                </ul>
+                <ul class="menu5">
+                    <li><a href="delilato_menuSub.html"><h4>딸기</h4></a></li>
+                    <li>#비타민가득</li>
+                    <li>#새콤상큼</li>
+                </ul>
+                <ul class="menu6">
+                    <li><a href="delilato_menuSub.html"><h4>체리</h4></a></li>
+                    <li>#탱글탱글체리과육</li>
+                    <li>#달콤상큼</li>
+                </ul>
+            </div>
+        </div>
+        <div class="best2">
+        <h3>BEST</h3>
+            <div class="best_1">
+                <ul class="menu1">
+                    <li><a href="#"><h4>피스타치오</h4></a></li>
+                    <li>#REAL피스타치오</li>
+                    <li>#고소한</li>
+                </ul>
+                <ul class="menu2">
+                    <li><a href="#"><h4>오렌지</h4></a></li>
+                    <li>#과즙톡톡</li>
+                    <li>#상큼한</li>
+                </ul>
+                <ul class="menu3">
+                    <li><a href="#"><h4>호두</h4></a></li>
+                    <li>#호두식감GOOD</li>
+                    <li>#고소한</li>
+                </ul>
+            </div>
+            <div class="best_2">
+                <ul class="menu4">
+                    <li><a href="#"><h4>블루베리</h4></a></li>
+                    <li>#세계10대슈퍼푸드</li>
+                    <li>#새콤달콤</li>
+                </ul>
+                <ul class="menu5">
+                    <li><a href="#"><h4>딸기</h4></a></li>
+                    <li>#비타민가득</li>
+                    <li>#새콤상큼</li>
+                </ul>
+                <ul class="menu6">
+                    <li><a href="#"><h4>체리</h4></a></li>
+                    <li>#탱글탱글체리과육</li>
+                    <li>#달콤상큼</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <div class="clear"></div>
+    <!--e.best-->
+
+    <section id="event">
+        <h3>EVENT</h3>
+        <div id="event_1">
+            <div class="event1"><a href="#"><img src="img/event1.png" alt="event1"></a>
+                <a href="delilato_eventSub.html"><div class="event1_1">
+                    <h6>이달의 젤라또<br>KIWI</h6>
+                    <p>신메뉴 만나보기</p>
+                    <div id="arrow"><img src="img/arrow.png" alt=""></div>	
+                </div></a>
+            </div>
+            <div class="event2"><a href="#"><img src="img/event2.png" alt="event2"></a>
+                <a href="delilato_eventSub.html"><div class="event2_1">
+                    <h6>남녀노소 좋아하는<br> STRAWBERRY </h6>
+                    <p>2021.01.01 ~ 01.31</p>
+                    <div id="arrow"><img src="img/arrow.png" alt=""></div>	
+                </div></a>
+            </div>
+            <div class="event3"><a href="#"><img src="img/event3.png" alt="event3"></a>
+                <a href="delilato_eventSub.html"><div class="event3_1">
+                    <h6>결제금액의 50%<br> M포인트 사용 가능</h6>
+                    <p>2021.01.14 ~ 01.31</p>
+                    <div id="arrow"><img src="img/arrow.png" alt=""></div>	
+                </div></a>
+            </div>
+        </div>
+    </section>
+    <div class="clear"></div>
+    <!--e.event-->
+
+    <section id="about">
+        <div class="about1">
+            <div id="about2">
+                <h2>한 입으로 더 진한 행복을 느낄 수 있는 공간</h2>
+                <img src="img/about_logo.png" alt="about_logo"><br>
+                <div class="btn_about"><a href="delilato_about.html"> ABOUT 델리라또</a></div>
+            </div>	
+        </div>
+    </section>
+    <div class="clear"></div> 
+    <!--e.about--> 
+
+    <section id="delivery">
+        <div class="delivery1">
+            <h3>DELIVERY</h3>
+            <div class="delivery_txt">
+                <ul>
+                    <li class="indigo1">델리라또 택배시작</li>
+                    <li class="indigo2">어디서나 즐기는 젤라또</li>
+                    <li class="gray">언제 어디서든 델리라또의 달콤함을 느껴보세요!</li>
+                </ul>
+                <div class="btn_delivery"><a href="#">주문하기</a></div>
+            </div>
+            
+        </div> 
+    </section>
+    <div class="clear"></div>
+    <!--e.delivery-->
+
+    <section id="store">
+        <div class="store1">
+            <p>언제나 당신과 함께, 델리라또 매장위치를 알아보세요.</p>
+            <div class="btn_store"><a href="delilato_store.html">매장찾기</a></div>
+        </div>
+    </section>
+    <div class="clear"></div>
+    <!--e.store-->
+
+    <footer>
+        <div class="footer1">
+            <img src="img/footer.png" alt="footer" class="footer_logo">
+            <img src="img/line.png" alt="line" class="line">
+            
+            <div id="left">	
+                <ul  id="ADDRESS">
+                    <li><h1>ADDRESS.</h1></li>
+                    <li><p>경기도 안양시 동안구 평촌대로 127번길</p></li>
+                </ul>
+                <div class="clear"></div>
+                <ul id="TEL">
+                    <li><h1>TEL.</h1></li>
+                    <li><p>031-319-1996</p></li>
+                </ul>
+                <div class="clear"></div>
+                <ul id="sns">
+                    <il><a href="#"><img src="img/facebook.png" alt="facebook"></a></il>
+                    <il><a href="#"><img src="img/insta.png" alt="instagram"></a></il>
+                    <il><a href="#"><img src="img/blog.png" alt="blog"></a></il>
+                </ul>
+            </div>
+            
+            <p class="info">
+                사업자 등록번호. 199-60-31900 <br>
+                델리라또 대표 김현정  ｜  개인정보관리책임자 김현정 <br>
+                COPYRIGHT ⓒ2021 DELILATO. ALL RIGHTS RESERVED. <br>
+                개인정보취급방침  ｜  이용약관  ｜  문의처  ｜  이메일무단수집거부 <br>
+            </p>
+        </div>	
+    </footer>
+    <!--e.footer-->
+
+</body>
+</html> 

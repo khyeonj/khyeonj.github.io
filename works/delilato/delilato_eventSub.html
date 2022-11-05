@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.0/css/all.css" integrity="sha384-Mmxa0mLqhmOeaE8vgOSbKacftZcsNYDjQzuCOm6D02luYSzBG8vpaOykv9lFQ51Y" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/delilato_eventSub.css">
+    <title>Event</title>
+    <script>
+        window.onload=function(){
+            let sidebarMenu = document.querySelector("#sidebar_menu");
+            let sidebarSearch = document.querySelector("#sidebar_search");
+            let menubarSide = document.querySelector("#menubar_side");            
+            let sidebarWrap = document.querySelector("#sidebarWrap");
+            
+            sidebarMenu.onclick=function(){                
+                menubarSide.style.display='block';
+            }
+            menubarSide.onmouseleave=function(){
+                this.style.display='none';
+            }
+            sidebarWrap.onmouseleave=function(){
+                menubarSide.style.display='none';
+            }
+
+            document.querySelector('.search_txt').onfocus=function(){
+                this.placeholder='';
+            }
+            document.querySelector('.search_txt').onblur=function(){
+                this.placeholder='검색어를 입력하세요';
+            }
+
+
+            
+            let searchIcon=document.querySelector('#search_icon');
+            let searchTxt2=document.querySelector('.search_txt2');
+
+            searchIcon.onclick = function(){
+                searchTxt2.style.display='block';
+            }
+            searchTxt2.onmouseleave = function(){
+                searchTxt2.style.display='none';
+            }
+
+
+            let bold=document.querySelector('#bold');
+            let normal=document.querySelector('#normal');
+
+            normal.onclick = function(){
+                normal.style.fontWeight = 'bold';
+                bold.style.fontWeight = 'normal';
+                normal.style.color = '#454d52';
+                bold.style.color = '#a4a7a9';
+            }
+
+        }
+
+    </script>
+    <style>
+        *{margin:0;padding: 0;}
+        #logo, #login, #menubar, section, footer{position: relative;}
+        #sidebarWrap{
+            width: 100%;                        
+            height: auto;
+            position: relative;
+        }
+        #sidebar{position: absolute;top: 0;left: 0;}
+        #menubar_side{z-index: 999999999;position: absolute;top: 41px;left: 0;width:100%;}
+    </style>
+</head>
+<body>
+    <header>
+        <div id="logo"><a href="index.html"><img src="img/logo.png" alt="logo"></a></div>
+        <div id="login"><a href="#">로그인</a></div>
+        <div id="menubar">
+            <ul>
+                <li><a href="delilato_about.html">ABOUT DELILATO</a></li>
+                <li><a href="delilato_menu.html">MENU</a></li>
+                <li><a href="delilato_event.html">EVENT</a></li>
+                <li><a href="delilato_store.html">STORE</a></li>
+                <li>
+                    <div class="search_box">
+                        <input type="text" class="search_txt" name="" placeholder="검색어를 입력하세요">
+                        <a href="#"><img src="img/search.png" alt=""></a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div id="sidebarWrap">
+            <ul id="sidebar">
+                <li id=sidebar_menu><a href="#"><img src="img/menubar.png" alt=""></a></li>
+                <div id="sidebar_search">
+                    <input type="text" class="search_txt2" name="" placeholder="검색어를 입력하세요">
+                    <a href="#"><img src="img/search.png" alt="" id="search_icon"></a>
+                </div>
+            </ul>
+            <div id="menubar_side">
+                <ul>
+                    <li><a href="delilato_about.html">ABOUT DELILATO</a></li>
+                    <li><a href="delilato_menu.html">MENU</a></li>
+                    <li><a href="delilato_event.html">EVENT</a></li>
+                    <li><a href="delilato_store.html">STORE</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <div class="clear"></div>
+    <!--e.header-->
+
+    <section id="event_sub">
+        <h3>3월 이달의 젤라또, 키위</h3>
+        <img src="img/상세페이지.png" alt="">
+    </section>
+
+    <footer>
+        <div class="footer1">
+          <img src="img/footer.png" alt="footer" class="footer_logo">
+          <img src="img/line.png" alt="line" class="line">
+          
+          <div id="left">	
+              <ul  id="ADDRESS">
+                  <li><h1>ADDRESS.</h1></li>
+                  <li><p>경기도 안양시 동안구 평촌대로 127번길</p></li>
+              </ul>
+              <div class="clear"></div>
+              <ul id="TEL">
+                  <li><h1>TEL.</h1></li>
+                  <li><p>031-319-1996</p></li>
+              </ul>
+              <div class="clear"></div>
+              <ul id="sns">
+                  <il><a href="#"><img src="img/facebook.png" alt="facebook"></a></il>
+                  <il><a href="#"><img src="img/insta.png" alt="instagram"></a></il>
+                  <il><a href="#"><img src="img/blog.png" alt="blog"></a></il>
+              </ul>
+          </div>
+          
+          <p class="info">
+              사업자 등록번호. 199-60-31900 <br>
+              델리라또 대표 김현정  ｜  개인정보관리책임자 김현정 <br>
+              COPYRIGHT ⓒ2021 DELILATO. ALL RIGHTS RESERVED. <br>
+              개인정보취급방침  ｜  이용약관  ｜  문의처  ｜  이메일무단수집거부 <br>
+          </p>
+      </div>	
+    </footer>
+    <!--e.footer-->
+</body>
+</html> 
+    

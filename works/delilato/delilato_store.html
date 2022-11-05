@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.0/css/all.css" integrity="sha384-Mmxa0mLqhmOeaE8vgOSbKacftZcsNYDjQzuCOm6D02luYSzBG8vpaOykv9lFQ51Y" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/delilato_store.css">
+    <title>Store</title>
+    <script>
+        window.onload=function(){
+            let sidebarMenu = document.querySelector("#sidebar_menu");
+            let sidebarSearch = document.querySelector("#sidebar_search");
+            let menubarSide = document.querySelector("#menubar_side");            
+            let sidebarWrap = document.querySelector("#sidebarWrap");
+            
+            sidebarMenu.onclick=function(){                
+                menubarSide.style.display='block';
+            }
+            menubarSide.onmouseleave=function(){
+                this.style.display='none';
+            }
+            sidebarWrap.onmouseleave=function(){
+                menubarSide.style.display='none';
+            }
+
+            document.querySelector('.search_txt').onfocus=function(){
+                this.placeholder='';
+            }
+            document.querySelector('.search_txt').onblur=function(){
+                this.placeholder='검색어를 입력하세요';
+            }
+
+
+            
+            let searchIcon=document.querySelector('#search_icon');
+            let searchTxt2=document.querySelector('.search_txt2');
+
+            searchIcon.onclick = function(){
+                searchTxt2.style.display='block';
+            }
+            searchTxt2.onmouseleave = function(){
+                searchTxt2.style.display='none';
+            }
+
+            
+            let chk1 = document.f2.chk1;
+            let chk2 = document.f2.chk2;
+            let chk3 = document.f2.chk3;
+            let chk4 = document.f2.chk4;
+            document.f1.chk1.onclick=function(){ 
+                if(chk1.checked==false){
+                    chk1.checked = true;
+                }else{
+                    chk1.checked = false;
+                    return false;
+                }
+            }
+            document.f1.chk2.onclick=function(){ 
+                if(chk2.checked==false){
+                    chk2.checked = true;
+                }else{
+                    chk2.checked = false;
+                    return false;
+                }
+            }
+            document.f1.chk3.onclick=function(){ 
+                if(chk3.checked==false){
+                    chk3.checked = true;
+                }else{
+                    chk3.checked = false;
+                    return false;
+                }
+            }
+            document.f1.chk4.onclick=function(){ 
+                if(chk4.checked==false){
+                    chk4.checked = true;
+                }else{
+                    chk4.checked = false;
+                    return false;
+                }
+            }
+        }
+
+    </script>
+    <style>
+        *{margin:0;padding: 0;}
+        #logo, #login, #menubar, section, footer{position: relative;}
+        #sidebarWrap{
+            width: 100%;                        
+            height: auto;
+            position: relative;
+        }
+        #sidebar{position: absolute;top: 0;left: 0;}
+        #menubar_side{z-index: 999999999;position: absolute;top: 41px;left: 0;width:100%;}
+    </style>
+</head>
+<body>
+    <header>
+        <div id="logo"><a href="index.html"><img src="img/logo.png" alt="logo"></a></div>
+        <div id="login"><a href="#">로그인</a></div>
+        <div id="menubar">
+            <ul>
+                <li><a href="delilato_about.html">ABOUT DELILATO</a></li>
+                <li><a href="delilato_menu.html">MENU</a></li>
+                <li><a href="delilato_event.html">EVENT</a></li>
+                <li><a href="delilato_store.html">STORE</a></li>
+                <li>
+                    <div class="search_box">
+                        <input type="text" class="search_txt" name="" placeholder="검색어를 입력하세요">
+                        <a href="#"><img src="img/search.png" alt=""></a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div id="sidebarWrap">
+            <ul id="sidebar">
+                <li id=sidebar_menu><a href="#"><img src="img/menubar.png" alt=""></a></li>
+                <div id="sidebar_search">
+                    <input type="text" class="search_txt2" name="" placeholder="검색어를 입력하세요">
+                    <a href="#"><img src="img/search.png" alt="" id="search_icon"></a>
+                </div>
+            </ul>
+            <div id="menubar_side">
+                <ul>
+                    <li><a href="delilato_about.html">ABOUT DELILATO</a></li>
+                    <li><a href="delilato_menu.html">MENU</a></li>
+                    <li><a href="delilato_event.html">EVENT</a></li>
+                    <li><a href="delilato_store.html">STORE</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <div class="clear"></div>
+    <!--e.header-->
+
+    <section id="store_wrap">
+        <h3>STORE</h3>
+
+        <div id="map" ></div>
+
+        <script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=1241e2a13542603868f2412c6657d928"></script>
+        <script>
+            var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+                mapOption = {
+                    center: new kakao.maps.LatLng(37.390007417039385, 126.9505840827752), // 지도의 중심좌표
+                    level: 4, // 지도의 확대 레벨
+                    mapTypeId : kakao.maps.MapTypeId.ROADMAP // 지도종류
+                }; 
+
+            // 지도를 생성한다 
+            var map = new kakao.maps.Map(mapContainer, mapOption); 
+
+            // 지도에 마커를 생성하고 표시한다
+            var marker = new kakao.maps.Marker({
+                position: new kakao.maps.LatLng(37.390007417039385, 126.9505840827752), // 마커의 좌표
+                map: map // 마커를 표시할 지도 객체
+            })
+
+            // 마커 위에 표시할 인포윈도우를 생성한다
+            var infowindow = new kakao.maps.InfoWindow({
+                content : '<div style="padding:5px;width:70px;">델리라또</div>' // 인포윈도우에 표시할 내용
+            });
+
+            // 인포윈도우를 지도에 표시한다
+            infowindow.open(map, marker);
+
+        </script>
+
+
+        <div id="store">
+            <div id="f_store">
+                <h4>매장찾기</h4>
+                <select name="" id="">
+                    <option value>시 / 도 선택</option>
+                    <option value="서울특별시">서울특별시</option>
+                    <option value="경기도">경기도</option>
+                    <option value="인천광역시">인천광역시</option>
+                    <option value="강원도">강원도</option>
+                    <option value="대구광역시">대구광역시</option>
+                    <option value="부산광역시">부산광역시</option>
+                    <option value="울산광역시">울산광역시</option>
+                    <option value="충청남도">충청남도</option>
+                    <option value="충청북도">충청북도</option>
+                    <option value="경상북도">경상북도</option>
+                    <option value="경상남도">경상남도</option>
+                </select>
+                <select name="" id="">
+                    <option value>시 / 군 / 구 선택</option>
+                    <option value="강남구">강남구</option>
+                    <option value="광진구">광진구</option>
+                    <option value="동작구">동작구</option>
+                    <option value="마포구">마포구</option>
+                    <option value="서대문구">서대문구</option>
+                    <option value="서초구">서초구</option>
+                    <option value="양천구">양천구</option>
+                    <option value="영등포구">영등포구</option>
+                    <option value="용산구">용산구</option>
+                    <option value="은평구">은평구</option>
+                </select>
+                <input type="text" placeholder="매장명을 입력해주세요." id="fs3">
+            </div>
+            <div id="f_store2">
+                <h4>제공서비스</h4>
+                <form action="" method="post" name="f1" >
+                    <ul>
+                        <li>
+                            <input type="checkbox" name="chk1" id="chk1">
+                            <label for="chk1">주차가능</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="chk2" id="chk2">
+                            <label for="chk2">단체석</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" checked name="chk3" id="chk3">
+                            <label for="chk3">휴대폰 충전 서비스</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="chk4" id="chk4">
+                            <label for="chk4">M포인트 사용 가능</label>
+                        </li>
+                    </ul>
+                </form>
+            </div>
+            <div id="f_store3">
+                <h4>제공서비스</h4>
+                <form action="" method="post" name="f2" >
+                    <ul>
+                        <li>
+                            <input type="checkbox" name="chk1" id="chk1">
+                            <label for="chk1">주차가능</label>
+                        </li>
+                        <li id=mr>
+                            <input type="checkbox" name="chk2" id="chk2">
+                            <label for="chk2">단체석</label>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <input type="checkbox" checked name="chk3" id="chk3">
+                            <label for="chk3">휴대폰 충전 서비스</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="chk4" id="chk4">
+                            <label for="chk4">M포인트 사용 가능</label>
+                        </li>
+                    </ul>
+                </form>
+            </div>
+
+            <input type="button" value="매장 검색" id="store_btn">
+        </div>
+        
+        <table>
+            <tr>
+                <th>매장명</th>
+                <th>주소</th>
+                <th class="tell">전화번호</th>
+                <th>운영시간</th>
+            </tr>
+            <tr>
+                <td>평촌범계점</td>
+                <td>경기 안양시 동안구 평촌대로223번길 64 (호계동, 제일빌딩)</td>
+                <td class="tell">031-383-5442</td>
+                <td>11:00 ~ 22:00</td>
+            </tr>
+            <tr>
+                <td>평촌학원가점</td>
+                <td>경기 안양시 동안구 평촌대로 141, 103, 104호</td>
+                <td class="tell">031-387-5442</td>
+                <td>10:00 ~ 23:00</td>
+            </tr>
+            <tr>
+                <td>안양호계점</td>
+                <td>경기 안양시 동안구 경수대로 572</td>
+                <td class="tell">031-383-5432</td>
+                <td>11:00 ~ 23:00</td>
+            </tr>
+            <tr>
+                <td>안양일번가점</td>
+                <td>경기 안양시 만안구 안양동 674-139</td>
+                <td class="tell">031-385-5442</td>
+                <td>10:00 ~ 22:00</td>
+            </tr>
+            <tr>
+                <td>안양역점</td>
+                <td>경기 안양시 만안구 만안로 214-1</td>
+                <td class="tell">031-385-5452</td>
+                <td>11:00 ~ 20:00</td>
+            </tr>
+            <tr>
+                <td>강남중앙점</td>
+                <td>서울 강남구 역삼동 817-11</td>
+                <td class="tell">02-563-5442</td>
+                <td>10:00 ~ 22:00</td>
+            </tr>
+            <tr>
+                <td>강남신논현점</td>
+                <td>서울 서초구 강남대로69길 8 (서초동)</td>
+                <td class="tell">02-532-5448</td>
+                <td>11:00 ~ 22:00</td>
+            </tr>
+            <tr>
+                <td>반포역점</td>
+                <td>서울 서초구 잠원동 58-24</td>
+                <td class="tell">02-537-5441</td>
+                <td>10:00 ~ 23:00</td>
+            </tr>
+            <tr>
+                <td>고속터미널역점</td>
+                <td>서울 서초구 반포동 19-4 고속터미널역 지하 엔터식스스쇼핑</td>
+                <td class="tell">02-537-5478</td>
+                <td>10:00 ~ 22:00</td>
+            </tr>
+            <tr>
+                <td>압구정점</td>
+                <td>서울 강남구 압구정로 206 (신사동)</td>
+                <td class="tell">02-537-5478</td>
+                <td>11:00 ~ 22:00</td>
+            </tr>
+        </table>
+        <ul id="num">
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+        </ul>
+    </section>
+
+
+    <footer>
+        <div class="footer1">
+          <img src="img/footer.png" alt="footer" class="footer_logo">
+          <img src="img/line.png" alt="line" class="line">
+          
+          <div id="left">	
+              <ul  id="ADDRESS">
+                  <li><h1>ADDRESS.</h1></li>
+                  <li><p>경기도 안양시 동안구 평촌대로 127번길</p></li>
+              </ul>
+              <div class="clear"></div>
+              <ul id="TEL">
+                  <li><h1>TEL.</h1></li>
+                  <li><p>031-319-1996</p></li>
+              </ul>
+              <div class="clear"></div>
+              <ul id="sns">
+                  <il><a href="#"><img src="img/facebook.png" alt="facebook"></a></il>
+                  <il><a href="#"><img src="img/insta.png" alt="instagram"></a></il>
+                  <il><a href="#"><img src="img/blog.png" alt="blog"></a></il>
+              </ul>
+          </div>
+          
+          <p class="info">
+              사업자 등록번호. 199-60-31900 <br>
+              델리라또 대표 김현정  ｜  개인정보관리책임자 김현정 <br>
+              COPYRIGHT ⓒ2021 DELILATO. ALL RIGHTS RESERVED. <br>
+              개인정보취급방침  ｜  이용약관  ｜  문의처  ｜  이메일무단수집거부 <br>
+          </p>
+      </div>	
+    </footer>
+    <!--e.footer-->
+</body>
+</html> 
+    
