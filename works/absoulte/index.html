@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/absolut.css">
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/jquery.easie.js"></script>
+    <title>absolute</title>
+    
+</head>
+<script>
+    $(function(){
+        $('#absolute').click(function(){
+            $('#m_left').stop().animate({'margin-left':'-1300px'},800);
+            $('#absolute').stop().animate({'margin-right':'-1450px'},800);
+            $('#absolute_shadow').stop().animate({'margin-right':'-1900px'},800);
+            $('#m_right').stop().animate({'margin-right':'-1300px'},800);
+            $('#m_cursor').stop().animate({'margin-right':'-1300px'},800);
+            $('#main_wrap').stop().animate({'opacity':0},1000,function(){
+                $(this).css('display','none');
+            });
+
+            $('#open_wrap').fadeIn(1500);
+        });
+
+        // function moreShow(){
+        //     $('#more_wrap').stop().animate({'height' : '884px','margin-top':'-442px'},1000);
+        // }
+        // function moreHide(){
+        //     $('#more_wrap').animate({'height' : '0','margin-top':'0'},500);
+        // }
+
+        // function mWrholShow(){
+        //     $('#more_wrap').stop().animate({'height' : '884px','margin-top':'-442px'},1000);
+        // }
+        // function moreHide(){
+        //     $('#more_wrap').animate({'height' : '0','margin-top':'0'},500);
+        // }
+
+
+
+        $('.btn1').click(function(){
+            $('#more_wrap').stop().animate({'height' : '884px','margin-top':'-442px'},1000);
+        });
+        $('.close1').click(function(){
+            $('#more_wrap').animate({'height' : '0','margin-top':'0'},500,function(){
+                $('#video_wrap').stop().animate({'height' : '0'},500);
+            });
+        });
+        
+
+        $('#arrow1').click(function(){
+            $('#m_warhol_wrap').stop().animate({'left' : '0px'},1000, 'easeOutBounce');
+        });
+        $('.close1_1').click(function(){
+            $('#more_wrap').stop().animate({'height' : '0','margin-top':'0'},500,function(){
+                $('#m_warhol_wrap').stop().animate({'left' : '1727px'},500);
+                $('#video_wrap').stop().animate({'height' : '0'},500);
+            });
+        });
+        $('.back').click(function(){
+            $('#video_wrap').stop().animate({'height' : '0'},0,function(){
+                $('#m_warhol_wrap').stop().animate({'left' : '1727px'},500);
+            });
+        });
+        $('#arrow2').click(function(){
+            $('#video_wrap').stop().animate({'height' : '338px'},1000, 'easeOutBounce');
+        });
+        
+
+
+        $('.btn2').click(function(){
+            $('#frame2').stop().animate({'height' : '969px','padding-top':'100px'},1000);
+        });
+        $('.close3').click(function(){
+            $('#frame2').animate({'height' : '0','margin-top':'0'},500);
+        });
+        
+        let list = $('#sub_banner2')
+            $('.next').click(function(){
+                $('#sub_banner2 ul:first').appendTo(list);
+                list.css('marginLeft',0);
+                list.animate({'marginLeft':'-640px'},2500);
+            });
+
+            let timer = setInterval(nextArrow,3000);
+            function nextArrow(){
+                $('.next').trigger('click');
+            };
+
+            $(list).hover(
+                function(){
+                    clearInterval(timer);
+                },
+                function(){
+                    timer = setInterval(nextArrow,3000);
+                }
+            );
+
+
+        $('#sb1').mouseenter(function(){
+            $('#sbh1').animate({'height':'750px'},1500);
+        });
+        $('#sbh1').mouseleave(function(){
+            $('#sbh1').animate({'height':'0px'},500);
+        });
+        
+        $('#sb2').mouseenter(function(){
+            $('#sbh2').animate({'height':'750px'},1500);
+        });
+        $('#sbh2').mouseleave(function(){
+            $('#sbh2').animate({'height':'0px'},500);
+        });
+        
+        $('#sb3').mouseenter(function(){
+            $('#sbh3').animate({'height':'750px'},1500);
+        });
+        $('#sbh3').mouseleave(function(){
+            $('#sbh3').animate({'height':'0px'},500);
+        });
+
+        $('#sb4').mouseenter(function(){
+            $('#sbh4').animate({'height':'750px'},1500);
+        });
+        $('#sbh4').mouseleave(function(){
+            $('#sbh4').animate({'height':'0px'},500);
+        });
+
+        $('#sb5').mouseenter(function(){
+            $('#sbh5').animate({'height':'750px'},1500);
+        });
+        $('#sbh5').mouseleave(function(){
+            $('#sbh5').animate({'height':'0px'},500);
+        });
+
+        $('#sb6').mouseenter(function(){
+            $('#sbh6').animate({'height':'750px'},1500);
+        });
+        $('#sbh6').mouseleave(function(){
+            $('#sbh6').animate({'height':'0px'},500);
+        });
+
+        $('#sb7').mouseenter(function(){
+            $('#sbh7').animate({'height':'750px'},1500);
+        });
+        $('#sbh7').mouseleave(function(){
+            $('#sbh7').animate({'height':'0px'},500);
+        });
+
+        $('#sb8').mouseenter(function(){
+            $('#sbh8').animate({'height':'750px'},1500);
+        });
+        $('#sbh8').mouseleave(function(){
+            $('#sbh8').animate({'height':'0px'},500);
+        });
+
+
+    });
+</script>
+
+<body>
+    <div id="wrap">
+        <div id="main_wrap">
+            <img src="img/m_left.png" alt="" id="m_left">
+            <img src="img/absolute.png" alt="" id="absolute">
+            <img src="img/absolute_shadow.png" alt="" id="absolute_shadow">
+            <img src="img/m_right.png" alt="" id="m_right">
+            <img src="img/cursor2.png" alt="" id="m_cursor">
+            
+        </div>
+
+        <div id="open_wrap">
+            <div id="logo"><img src="img/logo.png" alt=""></div>
+            <div id="o_left">
+                <h1>ANDY <br>
+                    WARHOL <br>
+                    LIMITED <br>
+                    EDITION
+                </h1>
+                <ul class="btnSet">
+                    <li class="btn1">SHOW DETAIL</li>
+                    <li class="btn2">MAKE COCKTAIL</li>
+                </ul>
+            </div>
+            <img src="img/paint.png" alt="" id="o_img">
+            <img src="img/Absolut-Andy-Warhol-Edition.gif" alt="" id="o_right">
+        </div>
+
+        <div id="more_wrap">
+            <div id="m_wrap1">
+                <img src="img/closed.png" alt="" class="close1">
+                <div id="mTxt_wrap">
+                    <div id="video_wrap">
+                        <video src="img/ABSOLUT ANDY WARHOL EDITION.mp4" autoplay muted loop></video>
+                    </div>
+                    <h2>Absolut Andy Warhol</h2>
+                    <div class="m_txt">
+                        <p>About Absolut Andy Warhol</p>
+                        <img src="img/arrow3.png" alt="" id="arrow1">
+                    </div>
+                    <div class="m_txt">
+                        <p>Show Video</p>
+                        <img src="img/arrow2.png" alt="" id="arrow2">
+                    </div>
+                </div>
+                <div id="m_warhol_wrap">
+                    <img src="img/closed.png" alt="" class="close1_1">
+                    <img src="img/back.png" alt="" class="back">
+                    <img src="img/left_mark.png" alt="" id="left_mark">
+                    <h3>I love the bottle, <br>
+                        I want to do something...</h3>
+                    <img src="img/right_mark.png" alt="" id="right_mark">
+                    <p>앱솔루트와 앤디워홀이 만난지 30년이 된 해를 기념하기 <br>
+                        위해 1985년 이후 30년만에 단 400병만 출시했다.<br>
+                        각자 개성을 담은 칵테일을 만들어 먹는 재미를<br>
+                        컬러풀하게 표현하고, 왁자지껄한 라이프스타일을<br>
+                        즐겼던 앤디워홀의 아이덴티티를 부각했다.</p>
+                </div>
+            </div>
+            <!-- <div id="m_wrap2">
+                <img src="img/closed.png" alt="" class="close1">
+
+            </div> -->
+        </div>
+
+        <div id="sub_wrap2">
+            <div id="frame2">
+                <div id="sub_banner2">
+                    <ul>
+                        <li><img src="img/BlueAndy.png" alt="" id="sb1"></li>
+                        <li><img src="img/BlueAndy_h.png" alt="" id="sbh1"></li>
+                    </ul>
+                    <ul>
+                        <li><img src="img/WarholOrange.png" alt="" id="sb2"></li>
+                        <li><img src="img/WarholOrange_h.png" alt="" id="sbh2"></li>
+                    </ul>
+                    <ul>
+                        <li><img src="img/ItGirl.png" alt="" id="sb3"></li>
+                        <li><img src="img/ItGirl_h.png" alt="" id="sbh3"></li>
+                    </ul>
+                    <ul>
+                        <li><img src="img/FactoryFizz.png" alt="" id="sb4"></li>
+                        <li><img src="img/FactoryFizz_h.png" alt="" id="sbh4"></li>
+                    </ul>
+                    <ul>
+                        <li><img src="img/BlueOnBlue.png" alt="" id="sb5"></li>
+                        <li><img src="img/BlueOnBlue_h.png" alt="" id="sbh5"></li>
+                    </ul>
+                    <ul>
+                        <li><img src="img/AbsolutStudio.png" alt="" id="sb6"></li>
+                        <li><img src="img/AbsolutStudio_h.png" alt="" id="sbh6"></li>
+                    </ul>
+                    <ul>
+                        <li><img src="img/Peaches.png" alt="" id="sb7"></li>
+                        <li><img src="img/Peaches_h.png" alt="" id="sbh7"></li>
+                    </ul>
+                    <ul>
+                        <li><img src="img/FactoryCola.png" alt="" id="sb8"></li>
+                        <li><img src="img/FactoryCola_h.png" alt="" id="sbh8"></li>
+                    </ul>
+                </div>
+                <img src="img/closed2.png" alt="" class="close3">
+                <div>
+                    <a href="#" class="next">ddd</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

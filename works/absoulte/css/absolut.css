@@ -1,0 +1,147 @@
+*{margin: 0; padding: 0; box-sizing: border-box;}
+body{font-family: 'Noto Sans KR', sans-serif;color: var(--font-color);}
+img{border: 0;}
+li{list-style: none;}
+
+#wrap{width: 100%; height: 969px;position: relative;}
+
+#main_wrap{width: 1920px; height: 969px;position: relative;background: #000; overflow: hidden;z-index: 9999;}
+#m_left{width: 960px; height: 100%;position: absolute;top: 0; left: 0;}
+#m_right{width: 960px; height: 100%;position: absolute;top: 0; right: 0;}
+#absolute{
+    width: 409px; height: 940px;position: absolute; z-index: 999; 
+    top: 50%; margin-top: -470px; right: 50%;margin-right: -195px; cursor: pointer;
+}
+#absolute_shadow{
+    width: 1068px; height: 969px; opacity: 1;
+    position: absolute; right: 50%; margin-right: -524px; z-index: 99;
+    animation-name: shadow;
+    animation-duration: 3.5s;
+    animation-iteration-count: infinite;
+}
+@keyframes shadow{
+    0%{opacity: 0;}
+    50%{opacity: 1;}
+    100%{opacity: 0;}
+}
+#m_cursor{
+    width: 110px; height: 110px;
+    position: absolute;top: 16%; right: 35%; z-index: 9999;
+    animation-name: mCursor;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+}
+@keyframes mCursor{
+    0%{top: 16%; right: 35%;}
+    50%{top: 18%; right: 37%;}
+    100%{top: 16%; right: 35%;}
+}
+
+
+/* e. main_wrap*/
+
+#open_wrap{ width: 1920px; height: 969px;position: absolute; top: 0;left: 0; background: #f4fefc;}
+#logo{position: absolute; top:20px; right: 30px;}
+
+#o_left{
+    color: #eb318f; width: 700px; height: 700px; text-align: right; 
+    position: absolute;top: 13%; left: 50%; margin-left: -700px; z-index: 999;
+    overflow: hidden;
+}
+#o_left h1{font-size: 150px; font-weight: 900; line-height: 150px;}
+#o_left ul{display: flex; justify-content: space-between;}
+#o_left li{
+    padding: 10px 40px 12px 40px;  background: #fff; font-size: 30px; line-height: 35px;
+    text-align: center;  cursor: pointer; font-weight: normal;
+    /* position: absolute; bottom: 0; */
+}
+.btn1{position: absolute; bottom: 0;left: 0;}
+.btn2{position: absolute;bottom: 0; right: 0;}
+#o_left li:first-child{margin-left: 78px; left: 0;}
+#o_left li:last-child{margin-right: 10px;}
+#o_left li:hover{background: #0033a0; color: #ece10a;}
+#o_img{position: absolute; bottom: 0; left: 0;z-index: 99;}
+#o_right{width: 800px; height: 800px; position: absolute; top: 50%; margin-top: -400px; right: 10%;}
+
+/* e. open_wrap*/
+
+#more_wrap{
+    width: 1724px; height: 0; overflow: hidden; /*h:884*/
+    position: absolute; left: 50%; margin-left: -862px; top: 50%; margin-top: 0; z-index: 2999;
+}
+#m_wrap1{
+    width: 1724px; height: 884px; 
+    background:url(../img/content_3.png) no-repeat;/*h:884*/
+    position: relative;
+}
+#video_wrap{width: 600px; height: 0; margin-bottom: 70px; margin-left: 15px; overflow: hidden;}
+#video_wrap video{width: 600px;  height: 338px;}
+.close1{position: absolute; top: 18px; right:18px; cursor: pointer;}
+#mTxt_wrap{position: absolute; bottom: 120px;   right: 130px;}
+.m_txt{display: flex; align-items: center; justify-content: flex-end; margin-top: 18px; cursor: pointer;}
+#mTxt_wrap h2 {font-size: 60px;font-weight: 900; margin-bottom: 32px; } 
+.m_txt p {font-size: 28px; margin-right: 15px; font-weight: 500;}
+
+
+
+#m_warhol_wrap{
+    width: 1724px; height: 884px; 
+    background:url(../img/content2.png) no-repeat;/*h:884*/
+    position: absolute; top: 0; left: 1727px;
+}
+.close1_1{position: absolute; top: 18px; right: 18px; cursor: pointer; }
+.back{position: absolute; top: 18px; left: 18px; cursor: pointer; }
+#left_mark{
+    position: absolute; top: 180px; right: 800px;
+    animation-name: lMark;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+}
+@keyframes lMark{
+    0%{transform: rotate(20deg);}
+    50%{transform: rotate(0deg);}
+    100%{transform: rotate(20deg);}
+}
+#right_mark{
+    position: absolute; top: 250px; right: 100px;
+    animation-name: rMark;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+}
+@keyframes rMark{
+    0%{transform: rotate(20deg);}
+    50%{transform: rotate(0deg);}
+    100%{transform: rotate(20deg);}
+}
+
+#m_warhol_wrap h3{
+    font-size: 45px;font-weight: bold; line-height: 66px; text-align: center;
+    position: absolute; top: 180px; right: 220px;
+}
+#m_warhol_wrap p{
+    font-size: 24px;line-height: 48px;
+    position: absolute; top: 380px; right: 350px;
+}
+/* e. more_wrap*/
+
+
+
+
+
+#sub_wrap2{width: 1920px; height: 0;position: absolute; top: 50%; margin-top:-485px; left: 0; text-align: center; z-index: 1999;}
+#frame2{width: 1920px; height: 0; /*969px*/
+    overflow: hidden;position: relative;}
+    
+.close3{
+    width: 29px; height: 30px; 
+    cursor: pointer; position: relative;margin-top: 20px;
+}
+.next{position: absolute; top: 0; right: 10px;display: none;}
+#sub_banner2{
+    display: flex; 
+    padding-left : 0; width: 1920px; height: 750px;
+    position: relative; cursor: pointer;
+}
+#sub_banner2 ul li img{width: 640px; height: 750px;position: relative;}
+#sub_banner2 ul li:last-child{position: absolute;bottom:-5px; z-index: 99;}
+#sub_banner2 ul li:last-child img{width: 640px; height: 0px;} 
