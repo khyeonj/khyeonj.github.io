@@ -1,0 +1,99 @@
+#menu_sub{
+    width: 940px;
+    margin: 0 auto;
+    padding-bottom: 50px;
+    text-align: center;
+}
+h3{padding: 0;}
+#menu_sub h1{
+    font-size: 12px; 
+    font-weight: normal; 
+    padding-top: 60px;
+    color: #454d52;
+}
+#menu_sub p{
+    font-size: 16px;
+    padding:5px 0 60px 0;
+    color: #454d52;
+}
+#menu_sub img{
+    width: 400px;
+}
+
+#sub_info{padding: 70px 0;width: 940px; margin: 0 auto;}
+h4{
+    color: var(--font-color);
+    font-size: 26px;
+    text-align: start;
+    margin-bottom: 20px;
+}
+#sub_info span{
+    font-size: 16px;
+    color: #454d52;
+    font-weight: normal; 
+}
+table{
+    width: 940px;
+    margin: 0 auto;
+    text-align: center;    
+    border-collapse: collapse;
+}
+th{
+    color: var(--font-color);
+    font-size: 20px;
+    padding:10px 0; 
+    border-bottom: 4px double  var(--font-color);
+}
+td{
+    color: #454d52;
+    font-size: 17px;
+    padding:9px 0;
+    border-bottom: 1px solid #454d52;   
+}
+
+
+
+@media screen and (min-width:1024px) and (max-width:1280px){
+    
+}
+
+@media screen and (min-width:660px) and (max-width:1023px){
+    #menu_sub{width: 640px; padding-bottom: 30px;}
+    #menu_sub h1{margin-top: 41px;}
+    #menu_sub p{font-size: 14px;}
+    #menu_sub img{width: 360px;}
+
+    #sub_info{padding: 70px 0;width:640px; margin: 0 auto;}
+    h4{
+        color: var(--font-color);
+        font-size: 26px;
+        text-align: start;
+        margin-bottom: 20px;
+    }
+
+    table{width: 640px;}
+    th{font-size: 18px;}
+    td{font-size: 14px;}
+}
+
+
+@media screen and (max-width:659px){
+    #menu_sub{width: 360px;padding-bottom: 20px;}
+    #menu_sub h1{margin-top: 41px;}
+    #menu_sub p{font-size: 14px;}
+    #menu_sub img{width: 320px;}
+
+    #sub_info{padding: 70px 0;width:360px; margin: 0 auto;}
+    h4{
+        font-size: 24px;
+    }
+    #sub_info span{
+        font-size: 14px;
+        color: #454d52;
+        font-weight: normal; 
+    }
+
+    table{width: 360px;}
+    th{font-size: 17px;}
+    td{font-size: 14px;}
+}

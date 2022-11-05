@@ -1,0 +1,242 @@
+/* :root{
+    --main-width:1380px;
+    --sub-width:1069px;
+    --font-color:#134364;
+} */
+
+#store_wrap{
+    width: var(--sub-width);
+    margin: 0 auto;
+}
+#map{
+    width: 1067px;
+    height: 563px;
+    margin-bottom: 70px;
+}
+
+#f_store{
+    display: flex;
+    align-items: center;
+}
+select{
+    width: 250px;
+    height: 30px;
+    margin-right: 18px;
+    color: #a3a3a3;
+    border: 1px solid #a3a3a3;
+}
+#fs3{
+    width: 370px;
+    height: 30px;
+    font-size: 14px;
+    color: #a3a3a3;
+    border: 1px solid #a3a3a3;
+}
+
+#store{
+    text-align: center;
+}
+
+h4{
+    color: var(--font-color);
+    font-size: 26px;
+    width: 180px;
+    text-align: justify;
+}
+
+
+#f_store3{display: none;}
+#f_store2{
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+}
+#f_store2 ul{
+    display: flex;
+    font-size: 16px;
+    color: #454d52;
+}
+#f_store2 li{margin: 0 20px;}
+#f_store2 li:first-child{margin: 0 20px 0 0;}
+
+#f_store2 li>input[type="checkbox"]{
+    position: absolute;
+    left: -9999px;
+}
+#f_store2 li>input[type="checkbox"]+label{
+    display: inline-block;
+    height: 14px;
+    background: url(../img/check.png) no-repeat 0 0;
+    background-size: 14px 28px;
+    line-height: 0.85em;
+    padding-left: 25px;
+}
+#f_store2 li>input:checked +label{
+    background: url(../img/check.png) no-repeat 0 -14px;
+    background-size: 14px 28px;
+}
+
+
+#store_btn{
+    border: 1px solid var(--font-color);
+    width: 250px;
+    height: 40px;
+    font-size: 16px;
+    color: var(--font-color);
+    background: none;
+    margin: 20px 0 50px 0;
+}
+
+
+table{
+    width: var(--sub-width);
+    margin: 0 auto;
+    text-align: center;    
+    border-collapse: collapse;
+}
+th{
+    color: var(--font-color);
+    font-size: 20px;
+    padding:10px 0; 
+    border-bottom: 4px double  var(--font-color);
+}
+td{
+    color: #454d52;
+    font-size: 17px;
+    padding:9px 0;
+    border-bottom: 1px solid #454d52;   
+}
+
+#num{
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 150px;
+    justify-content: flex-end;
+}
+#num li{ width: 20px;}
+#num a{padding-right: 10px; color: #bfbfbf; font-weight: normal;}
+#num li:first-child a{font-weight: bold; color: var(--font-color);}
+
+
+
+@media screen and (min-width:1024px) and (max-width:1280px){
+    #store_wrap{width: 840px;}
+    #map{
+        width: 840px;
+        height: 563px;
+    }
+    
+    table{width: 840px;}
+    th{
+        font-size: 20px;
+    }
+    td{font-size: 16px;}
+    
+}
+
+@media screen and (min-width:660px) and (max-width:1023px){
+    #store_wrap{
+        width: 640px;
+        margin-top: 41px;
+    }
+    #map{
+        width: 640px;
+        height: 563px;
+    }
+
+    h4{
+        font-size: 20px;
+        width: 120px;
+    }
+
+    
+    #f_store2 ul{
+        display: flex;
+        font-size: 14px;
+        color: #454d52;
+    }
+    #f_store2 li{margin: 0 15px;}
+    #f_store2 li:first-child{margin: 0 15px 0 0;}
+
+    #f_store2 li>input[type="checkbox"]+label{
+        padding-left: 20px;
+    }
+    select{width: 200px;}
+    #fs3{width: 320px;}
+
+    
+    table{width: 640px;}
+    th{
+        font-size: 18px;
+    }
+    td{font-size: 13px;}
+}
+
+
+@media screen and (max-width:659px){
+    #store_wrap{
+        width: 360px;
+        margin-top: 41px;
+    }
+    #map{
+        width: 360px;
+        height: 563px;
+        margin-bottom: 50px;
+    }
+
+    h4{
+        font-size: 20px;
+        width: 120px;
+    }
+
+    #f_store{
+        display:inline-block;
+        text-align: left;
+    }
+    select{width: 100%; margin-top: 10px;}
+    #fs3{width: 100%;margin-top: 10px;}
+
+
+    #f_store2{display: none;}
+    #f_store3{
+        width: 360px;
+        display:inline-block;
+        text-align: left;
+        margin: 20px 0;
+    }
+    #f_store3 h4{margin-bottom: 10px;}
+    #f_store3 ul{
+        display: flex;
+        font-size: 14px;
+        color: #454d52;
+        margin-bottom: 10px;
+        justify-content: space-between;
+    }
+    #f_store3 li{width: 150px;}
+    
+    #f_store3 li>input[type="checkbox"]{
+        position: absolute;
+        left: -9999px;
+    }
+    #f_store3 li>input[type="checkbox"]+label{
+        display: inline-block;
+        height: 14px;
+        background: url(../img/check.png) no-repeat 0 0;
+        background-size: 14px 28px;
+        line-height: 0.85em;
+        padding-left: 25px;
+    }
+    #f_store3 li>input:checked +label{
+        background: url(../img/check.png) no-repeat 0 -14px;
+        background-size: 14px 28px;
+    }
+    
+
+    
+    table{display: none;}
+    #num{display: none;}
+
+    #store_btn{margin: 20px 0 80px 0;}
+
+}
+

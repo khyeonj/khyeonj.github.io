@@ -1,0 +1,144 @@
+/* :root{
+    --main-width:1380px;
+    --sub-width:1069px;
+    --font-color:#134364;
+} */
+
+
+#signature_wrap{
+    background: #f9f9f9;
+    height: 642px;
+}
+#signature{
+    width: var(--sub-width);
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+h4{
+    color: #07578e;
+    font-size: 24px;
+    padding-top: 60px;
+}
+h6{
+    color: #454d52;
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: normal;
+    padding-top: 20px;
+}
+
+/*----e. signature_wrap----*/
+
+#all{
+    width: var(--sub-width);
+    margin: 0 auto;
+    text-align: center;
+}
+.all_1{
+    display: flex;
+    justify-content: space-between;
+}
+.a_img{padding-bottom: 10px;}
+h5{
+    color: #07578e;
+    font-size: 18px;
+}
+#all p{
+    color: #454d52;
+    font-size: 15px;
+    padding-top: 10px;
+    padding-bottom: 70px;
+}
+
+.a_b_n .a_hidden{
+    visibility:hidden
+}
+
+#all2{display: none;}
+
+/*----e. all_wrap----*/
+
+
+
+@media screen and (min-width:1024px) and (max-width:1280px){
+    #signature_wrap{height: 550px;}
+    #signature{width: 840px;}
+    .s_img img{width: 180px;}
+    h4{padding-top: 40px;}
+    
+    /*----e. signature_wrap----*/
+    
+    #all{width: 840px;}
+    .a_img{padding-bottom: 10px;}
+    .a_img img{width: 140px;}
+}
+
+@media screen and (min-width:660px) and (max-width:1023px){
+    #signature_wrap{
+        height: 430px;
+        margin-top: 41px;
+    }
+    #signature{width: 640px;}
+    .s_img img{width: 140px;}
+    h4{
+        font-size: 20px;
+        padding-top: 25px;
+    }
+    h6{
+        font-size: 16px;
+        line-height: 26px;
+        padding-top: 18px;
+    }
+    
+    /*----e. signature_wrap----*/
+    
+    #all{width: 640px;}
+    .a_img{padding-bottom: 10px;}
+    .a_img img{width: 110px;}
+    h5{font-size: 16px;}
+    #all p{
+        font-size: 12px;
+        padding-top: 8px;
+        padding-bottom: 50px;
+    }
+
+}
+
+
+@media screen and (max-width:659px){
+    #signature_wrap{
+        height: 300px;
+        margin-top: 41px;
+    }
+    #signature{width: 340px;}
+    .s_img img{width: 75px;}
+    h4{
+        font-size: 16px;
+        padding-top: 15px;
+    }
+    h6{
+        font-size: 12px;
+        line-height: 20px;
+        padding-top: 10px;
+    }
+    
+    /*----e. signature_wrap----*/
+    #all{display: none;}
+    #all2{
+        display: block;
+        margin: 0 auto;
+        width: 340px;
+        text-align: center;
+    }
+    .a_img{padding-bottom: 5px;}
+    .a_img img{width: 80px;}
+    .a_best img, .a_signature img{height: 12px;}
+    h5{font-size: 14px;}
+    #all2 p{
+        font-size: 12px;
+        padding-top: 8px;
+        padding-bottom: 40px;
+    }
+}

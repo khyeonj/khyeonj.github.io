@@ -1,0 +1,21 @@
+#event_sub{
+    width: 940px;
+    margin: 0 auto;
+    padding-bottom: 150px;
+}
+
+@media screen and (min-width:1024px) and (max-width:1280px){
+    #event_sub{width: 840px;padding-bottom: 100px;}
+    #event_sub img{width: 840px;}
+}
+
+@media screen and (min-width:660px) and (max-width:1023px){
+    #event_sub{width: 640px; margin-top: 41px;padding-bottom: 70px;}
+    #event_sub img{width: 640px;}
+}
+
+
+@media screen and (max-width:659px){
+    #event_sub{width: 360px;margin-top: 41px;padding-bottom: 70px;}
+    #event_sub img{width: 360px;}
+}
