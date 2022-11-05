@@ -1,0 +1,127 @@
+*{margin: 0; padding: 0; box-sizing: border-box;}
+a{
+    text-decoration: none; font-size: 36px; line-height: 48px;
+    font-family: 'baskinrobbins', 'Noto Sans KR', sans-serif; color: #303030;
+}
+li{list-style: none;}
+@font-face{font-family:'baskinrobbins'; src: url(../font/baskinrobbins\ B.ttf);}
+@font-face{font-family:'baskinrobbinsR'; src: url(../font/baskinrobbins\ R.ttf);}
+h2{ font-family: 'baskinrobbins', 'Noto Sans KR' ,sans-serif; color: #303030; font-size: 42px; padding-bottom: 25px;}
+p{ font-family: 'baskinrobbinsR', 'Noto Sans KR', sans-serif; color: #303030;font-size: 30px; line-height: 48px;}
+
+#wrap{width: 1920px; height: 100vh; background: url(../img/bg.png) no-repeat 0 0; background-size: cover;}
+#total_wrap{ width: 1320px; height: 630px; margin: 0 auto; position: relative; top: 170px; border: 15px solid #e8224b;}
+#total_wrap{ width: 1350px; height: 660px; margin: 0 auto; position: relative; top: 170px;}
+
+#left{width: 300px; height: 630px;}
+.navi li:nth-child(1) a{width: 300px; height: 180px;display: block; background: #fff;text-align: center;padding-top: 50px; }
+.navi li:nth-child(2) a{width: 300px; height: 150px;display: block; background: #fef54a;text-align: center; padding-top: 28px; }
+.navi li:nth-child(3) a{width: 300px; height: 150px;display: block; background: #ec673e;text-align: center; padding-top: 28px; color: #fff; }
+.navi li:nth-child(4) a{width: 300px; height: 150px;display: block; background: #e8224b;text-align: center; padding-top: 28px;}
+
+/* .navi li:nth-child(1) a.on{background: #000;} */
+.navi li:nth-child(2) a.on{background: #fffaa0;}
+.navi li:nth-child(3) a.on{background: #ff9777;}
+.navi li:nth-child(4) a.on{background: #f08ca1;}
+
+#right{width: 1020px; height: 630px; position: absolute; top: 0;left: 300px;}
+
+#tab1{width: 1020px; height: 630px; background: #fff;position: relative; top: 0; right: 0;}
+.logo{position: absolute;top: 26px; right: 28px;}
+.mainBird{position: absolute;top: -175px; left: -195px;}
+.mainCereal{position: absolute;bottom: -63px; right: -82px;}
+.good1{position: absolute;top:95px; right: 250px;}
+.good2{position: absolute;top:200px; right: 500px;}
+.good3{position: absolute;top:133px; right: 360px;}
+
+#tab2{width: 1020px; height: 630px; background: #fffaa0;position: relative; top: 0; right: 0; display: none;}
+.iceRing{position: absolute;top: -73px; left: -126px;}
+.iceBird{position: absolute;top: -47px; left: -25px;}
+#iceTxt{position: absolute;bottom: 170px; left: 72px; text-align: center;}
+.iceLogo{position: absolute;bottom:30px; left: 40px;}
+.iceCone{position: absolute;bottom:-44px; right: -35px;}
+.iceCream{position: absolute;bottom:136px; right: 43px;}
+
+#tab3{width: 1020px; height: 630px; background: #ff9777;position: relative; top: 0; right: 0; display: none;}
+.cakeBird{position: absolute;top: -123px; left: -175px;}
+.cakeLogo{position: absolute;top: 26px; right: 28px;}
+#cakeTxt{position: absolute;bottom: 95px; left: 170px; text-align: center;}
+#cakeTxt h2, #cakeTxt p{color: #fff;}
+.cakeBox{position: absolute;bottom:-33px; right: -63px;}
+
+#tab4{width: 1020px; height: 630px; background: #f08ca1;position: relative;  top: 0; right: 0; display: none;}
+.viyottBox{position: absolute;top: 101px; left: 50px; cursor: pointer; }
+.viyottInside{position: absolute;top: 101px; left: 50px;cursor: pointer; }
+.viyottLogo {position: absolute;top: 26px; right: 28px;}
+#viyottTxt{position: absolute;top: 150px; right: 90px; text-align: center;}
+.viyottBird{position: absolute;bottom:-57px; right: -67px;}
+
+.good2, .good3{
+    animation-name: goodring;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+@keyframes goodring{
+    0%{transform: rotate(360deg);}
+    100%{transform: rotate(0deg);}
+    /* 100%{transform: rotate(180deg);} */
+}
+
+.mainCereal{
+    animation-name: cereal;
+    animation-duration: 3.5s;
+    animation-iteration-count: infinite;
+}
+@keyframes cereal{
+    0%{transform: rotate(15deg);}
+    50%{transform: rotate(0deg);}
+    100%{transform: rotate(15deg);}
+}
+
+
+.iceRing{
+    animation-name: iceRing2;
+    animation-duration: 3.5s;
+    animation-iteration-count: infinite;
+}
+@keyframes iceRing2{
+    0%{transform: rotate(360deg);}
+    100%{transform: rotate(0deg);}
+}
+
+.iceCream{
+    animation-name: ices;
+    animation-duration: 3.5s;
+    animation-iteration-count: infinite;
+}
+@keyframes ices{
+    /* 0%{bottom:-44px; right: -35px;}
+    50%{bottom:-7px; right: 0px;}
+    100%{bottom:-44px; right: -35px;} */
+
+    0%{transform: rotate(10deg);}
+    50%{transform: rotate(0deg);}
+    100%{transform: rotate(10deg);}
+}
+
+.cakeBird{
+    animation-name: cBird;
+    animation-duration: 2.5s;
+    animation-iteration-count: infinite;
+}
+@keyframes cBird{
+    0%{transform: rotate(-15deg);}
+    50%{transform: rotate(0deg);}
+    100%{transform: rotate(-15deg);}
+}
+
+.viyottBird{
+    animation-name: vBird;
+    animation-duration: 2.5s;
+    animation-iteration-count: infinite;
+}
+@keyframes vBird{
+    0%{bottom:-57px; right: -67px;}
+    50%{bottom:-17px; right: 200px;}
+    100%{bottom:-57px; right: -67px;}
+}
