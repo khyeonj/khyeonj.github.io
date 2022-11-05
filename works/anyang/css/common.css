@@ -1,0 +1,350 @@
+*{margin: 0; padding: 0; box-sizing: border-box;}
+html{font-size: 16px;}
+body{font-family: 'Noto Sans KR', sans-serif;color: var(--font-color);}
+a{text-decoration: none; color: var(--font-color);}
+li{list-style: none;}
+img{border:0;}
+
+h2{font-size: var(--font-size);  }
+h5, h3{font-size: var(--font-sSub1); }
+h4{font-size: var(--font-sSub2);}
+h6{font-size: var(--font-sSub3); font-weight: normal;}
+p{font-size: var(--font-smini); }
+
+:root{
+    --main-width:1366px;
+    --font-color:#242424;
+    --font-cSub1:#a3a3a3;
+    --font-cSub2:#7e7e7e;
+    --font-cSub3:#f39800;
+    --bar-color:#bdbdbd;
+    --font-size: 2.75rem;/*45*/
+    --font-sSub1: 1.625rem;/*26*/
+    --font-sSub2: 1.25rem; /*20*/
+    --font-sSub3: 1.115rem;/*17*/
+    --font-smini: 0.875rem;/*14*/
+}
+
+#header_wrap, #top_menu, #main_menu, #main_img, 
+#sub_menu, .sub, .n_box, .p_box, #menu_sidebar, section, footer {position : relative;}
+
+#menu_sidebar{display: none;}
+header{
+    width: var(--main-width);
+    height: 154px;
+    margin: 0 auto;
+    display: flex;
+    position : relative;
+}
+#logo{
+    margin-top: 42px;
+    margin-bottom: 30px;
+    position : relative;
+}
+
+#right{
+    width: 1130px;
+    padding-left: 10px;
+}
+#top{
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 36px;
+}
+#top a{
+    padding: 0 15px;
+    font-size: 16px;
+    font-weight: lighter;
+}
+#top a:last-child{padding-right: 0;}
+
+#main{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+}
+#main>li>a{font-size: var(--font-sSub2);}
+#main>li{
+    padding: 0px 30px;
+    /* background: red; */
+    text-align: center;
+    width: 145px;
+    height: 80px;
+    line-height: 80px;
+}
+#main>li:last-child{width: 220px;}
+/* #main>li:hover{border-bottom: 7px solid var(--font-cSub3);} */
+
+nav{
+    display: none;
+    float: left;
+    width: 100%;
+    height: 400px;
+    padding-top: 5px;
+    background: rgba(255, 255, 255, 0.85);
+    z-index: 999999;
+    position: absolute;
+    top: 154px;
+}
+#sub_bar{
+    width: var(--main-width);
+    margin: 0 auto;
+    /* background: #f0f; */
+    display: flex;
+}
+#clearbox{width: 232px;height: 80px;}
+#sub_menu{
+    display: flex;
+    width: 1130px;
+    justify-content: space-between;
+    padding-left: 10px;
+
+}
+#video_wrap{
+    width: 300px;
+    height: 200px;
+    /* background: red; */
+    position: absolute;
+    top: 100px; left: 6%;
+    /* margin-top: -100px; */
+}
+#video_wrap video{width: 300px;  height: 200px;}
+
+#sub_menu>li{
+    width: 145px;
+    height:40px;
+    line-height:40px;
+    color:var(--font-color);
+    text-align: center;
+}
+#sub_menu>li:last-child{width: 220px;}
+.sub>li>a{font-size: 15px;display: inline-block;}
+
+.sub>li:hover a{
+    color: var(--font-cSub3);
+    font-weight: bold;
+}
+
+/*----- e. header -----*/
+
+
+
+footer{
+    border-top: 1px solid var(--bar-color);
+    width: 100%;
+    margin-top: 120px;
+}
+
+#footer_wrap{
+    width: var(--main-width); 
+    margin:0 auto;
+    padding: 52px 90px 120px 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+#footer_wrap img{width: 286px; height: 102px;}
+
+#f_box1 li{font-size: var(--font-smini); line-height: 22px;}
+#f_box1 li:last-child{margin-top: 26px;}
+#f_box1 li span{font-weight: bold;}
+
+#footer_box{
+    width: 238px;
+    height: 46px;
+    line-height: 0;
+    margin-bottom: 18px;
+    position: relative;
+}
+#footer_box select{
+    width: 100%;
+    height: 100%;
+    padding: 0 24px;
+    border: 1px solid var(--bar-color);
+    font-size: var(--font-sSub3);
+    appearance: none;
+}
+#footer_box::after{
+    background: url(../img/down_arrow.png);
+    width: 19px;
+    height: 10px;
+    display: block;
+    content: '';
+    position: absolute;
+    top: 50%; margin-top: -5px;
+    right: 24px;
+}   
+
+#f_txt{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#f_txt span{font-weight: bold;}
+
+
+
+#f_box2 img{width: 19px;height: 10px;} 
+#f_txt img{width: 1px;height: 15px;} 
+
+
+@media screen and (min-width:767px) and (max-width:1365px){
+    html{font-size: 10px;}
+    :root{
+        --main-width:90%;
+    }
+    #logo{
+        position: absolute;
+        top:  5%; left: 20px;
+        width: 170px;
+        margin-top: 0;
+        margin-bottom: 0;
+        z-index: 99;
+    }
+    #logo img{width: 100%;}
+
+    #right{
+        width:100%;
+        padding-right: 0%;
+        position: absolute; top: 0; right: 0;
+    }
+    #top a{font-size: 1.4rem;}
+    
+    #main{width: 100%;}
+    #main>li>a{font-size:1.55rem;}
+    #main>li{padding: 0px 1.3%;}
+
+    #clearbox{display: none;}
+    #sub_menu{width: 100%;}
+    #video_wrap{display: none;}
+    .sub>li>a{font-size: 1.3rem;}
+    
+    /*----- e. header -----*/
+    
+    
+    
+    footer{
+        border-top: 1px solid var(--bar-color);
+        width: 100%;
+        margin-top: 120px;
+    }
+    
+    #footer_wrap{
+        width: 100%; 
+        margin:0 auto;
+        padding: 52px 70px 120px 70px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+    #footer_wrap img{width: 143px; height: 51px; margin-right: 1%;}
+    
+    #f_box1 li{font-size: 1.2rem; line-height: 22px;}
+    #f_box1 li:last-child{margin-top: 26px;}
+    #f_box1 li span{font-weight: bold;}
+    
+    #footer_box{
+        width: 200px;
+        height: 36px;
+        line-height: 0;
+        margin-bottom: 18px;
+        position: relative;
+    }
+    #footer_box select{
+        font-size: 1.5rem;
+        padding: 0 15px;
+    }
+    #footer_box::after{right: 15px;}   
+    
+    #f_txt span{font-weight: bold;}
+    #f_txt p{font-size: 1.3rem; }    
+    
+    #f_box2 img{width: 19px;height: 10px;} 
+    #f_txt img{width: 1px;height: 15px;} 
+}
+
+@media screen and (max-width:766px){
+    html{font-size: 10px;}
+    :root{
+        --main-width:90%;
+    }
+    header{height: 50px; width: 100%;}
+    #logo{
+        position: absolute;
+        bottom: 0; left:0;
+        width: 100px;
+        margin-top: 0;
+        margin-bottom: 0;
+        margin-left: 5%;
+        z-index: 99;
+    }
+    #logo img{width: 100%;}
+    #right, nav{display: none;}
+
+    #menu_sidebar{
+        display: block;position: relative;
+        width: 100%;
+    }
+    .bars{position: absolute; bottom: 10%; right: 0; margin-right: 5%;}
+    .barclose{position: absolute; top: 2%; right: 1%; margin-right: 5%;}
+    .sMenuBar{
+        position: absolute; top: 0; right: -45%; z-index: 999;
+        width: 45%; height: 100vh; background: #f39800; display: none;
+    }
+    #sTop{
+        width: 80%; display: flex; justify-content: space-between;
+        margin: 45% auto 10% auto; font-size: 1.45rem;
+    }
+    #sMenu>li{text-align: center;font-size: 1.7rem; padding: 10% 0; }
+    #sMenu>li>a{font-weight: bold;}
+    .sub{text-align: center;font-size: 1.4rem; margin-top: 10%; display: none;}
+    .sub>li{padding: 1.5% 0;}
+    .sub>li:hover a{
+        color: #fff;
+        font-weight: bold;
+    }
+    
+    /*----- e. header -----*/
+
+    footer{
+        border-top: 1px solid var(--bar-color);
+        width: 100%;
+        margin-top: 120px;
+    }
+    
+    #footer_wrap{
+        width: 100%; 
+        margin:0 auto;
+        padding: 5%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+    #footer_wrap img{width: 143px; height: 51px; margin: 0 auto 10% auto;}
+    
+    #f_box1 li{font-size: var(--font-smini); line-height: 22px;}
+    #f_box1 li:last-child{margin-top: 5px;}
+    #f_box1 li span{font-weight: bold;}
+    
+    #f_box2{width: 100%;}
+    #footer_box{
+        width: 100%;
+        height: 36px;
+        margin-top: 8%;
+        margin-bottom: 3%;
+    }  
+    
+    #f_txt{
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+    #f_txt p{ font-size: 1.1rem; width: 100%;}
+    .fTxtRight{margin-left: 50%;}
+    .fTxtLeft{margin-left: -50%;}
+    #f_txt span{font-weight: bold;}
+    
+    #f_box2 img{width: 19px;height: 10px;} 
+    #f_txt img{width: 1px;height: 15px;} 
+}

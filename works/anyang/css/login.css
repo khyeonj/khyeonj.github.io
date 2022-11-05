@@ -1,0 +1,75 @@
+#login_wrap{width: 100%; margin: 0 auto; border-top: 1px solid var(--bar-color);}
+#login{width: 1138px;  margin: 0 auto; text-align: center;}
+.loginLogo{margin-top: 80px; margin-left: 40px; margin-bottom:40px;}
+#login h6{color: var(--font-color); font-size: 20px; font-weight: lighter;}
+#login h1{font-size: 40px; margin-bottom: 30px; margin-top: 10px;}
+#login h1>span{color: var(--font-cSub3);}
+
+.loginBox{width: 1138px; height: 370px; background: #f6f5f1;}
+.boxInside{width: 755px; margin: 0 auto; display: flex; justify-content: space-between; align-items: flex-start; padding-top: 80px;}
+#id{
+    width: 450px; height: 50px; background: #fff; display: block;
+    border: 1px solid var(--bar-color);padding: 0 20px;
+}
+#pw{
+    width: 450px; height: 50px; background: #fff; display: block;
+    border: 1px solid var(--bar-color);padding: 0 20px; margin-top: 30px;
+}
+.error_next_box{display: flex; color: red;font-size: 14px; margin-top: 5px;}
+input::placeholder{font-size: 20px; color: var(--bar-color); font-weight: lighter;}
+
+#find{display: flex; margin-top: 60px; width: 450px; justify-content: space-between;}
+
+#find a{font-size: var(--font-sSub3); color: var(--bar-color); padding:0 45px;}
+#find li{color: var(--bar-color);}
+#find li:first-child a{padding-left: 0;}
+#find li:last-child a{border-right: none; padding-right: 0;}
+
+.boxRight{width: 200px; height: 138px; background: var(--font-cSub3);}
+.boxRight>p{font-weight: bold;font-size: var(--font-sSub1);padding-top: 45px;}
+.boxRight a{color: #fff;}
+
+
+@media screen and (min-width:767px) and (max-width:1365px){
+    #login{width: 80%;}
+    #login h1{font-size: 3.8rem;}
+
+    .loginBox{width: 100%; height: 370px; background: #f6f5f1;}
+    .boxInside{width: 570px; margin: 0 auto; display: flex; justify-content: space-between; align-items: flex-start; padding-top: 80px;}
+    .boxLeft{width: 60%;}
+    #id{width: 100%; height: 50px;}
+    #pw{width: 100%; height: 50px;}
+    input::placeholder{font-size: 1.8rem;}
+
+    #find{display: flex; margin-top: 60px; justify-content: space-between; width: 100%;}
+    #find a{font-size:1.4rem;padding:0 30px;}
+    #find li:first-child a{padding-left: 0;}
+    #find li:last-child a{border-right: none; padding-right: 0;}
+
+    .boxRight{width: 30%; height: 138px;}
+    .boxRight>p{font-size: 2.6rem;}
+}
+@media screen and (max-width:766px){
+    #login_wrap{border-top: none;}
+    #login{width: 80%;}
+    #login h6{font-size:1.7rem;}
+    #login h1{font-size: 2.6rem;}
+
+    .loginBox{width: 100%; height: 340px; background: #f6f5f1; margin-top: 40px;}
+    .boxInside{
+        width: 90%;display: flex; justify-content: space-between; 
+        align-items: flex-start; padding-top: 30px; flex-direction: column;
+    }
+    .boxLeft{width: 100%;height: 230px;}
+    #id{width: 100%; height: 50px;}
+    #pw{width: 100%; height: 50px;}
+    input::placeholder{font-size: 1.8rem;}
+
+    #find{display: flex; margin-top: 20px; justify-content: space-between; width: 100%;}
+    #find a{font-size:1.4rem;padding:0 10px; text-align: center;}
+    #find li:first-child a{padding-left: 0;}
+    #find li:last-child a{border-right: none; padding-right: 0;}
+
+    .boxRight{width: 100%; height: 50px;}
+    .boxRight>p{font-size: 2.0rem;padding-top: 10px;}
+}
