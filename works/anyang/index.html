@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="shortcut icon" href="img/ayac_icon.ico" type="image/x-icon">
+    <title>안양문화예술재단</title>
+    <script>
+        $(function(){
+            //gnb
+            $('#main').mouseenter(function(){
+                $('nav').stop().slideDown(800);
+            });
+            $('nav').mouseleave(function(){
+                $(this).stop().slideUp(800);
+            });
+
+            $('#main>li').mouseenter(function(){
+                $(this).css('border-bottom','7px solid var(--font-cSub3)');
+            });
+            $('#main>li').mouseleave(function(){
+                $('#main>li').css('border-bottom','none');
+            });
+
+            //모바일 메뉴
+            $('.bars').click(function(){
+                $('.sMenuBar').css('display','block').animate({'right':'0%'},500);
+            });
+            $('.barclose').click(function(e){
+                e.preventDefault();
+                $('.sMenuBar').animate({'right':'-45%'},300,function(){
+                    $('.sMenuBar').css('display','none');
+                });
+            });
+            $('#sMenu>li').click(function(){
+                $('.sub').css('display','none');
+                $(this).children('.sub').stop().slideDown(500);
+                return false
+            });
+            $( '.sub' ).click(function(){
+                location.replace('apap.html');
+            });
+
+
+            $('#gray_n').click(function(e){
+                e.preventDefault();
+                $('#notice_box_wrap').css('display' , 'none');
+                $('#red1').css('background', '#a3a3a3');
+                $('#black_n h5').css('color', 'var(--font-cSub2)');
+
+                $('#press_box_wrap').css('display' , 'block');
+                $('#gray').css('background', '#d0111b');
+                $('#gray_n h5').css('color', 'var(--font-color)');
+            });
+            $('#black_n').click(function(e){
+                e.preventDefault();
+                $('#notice_box_wrap').css('display' , 'block');
+                $('#red1').css('background', '#d0111b');
+                $('#black_n h5').css('color', 'var(--font-color)');
+
+                $('#press_box_wrap').css('display' , 'none');
+                $('#gray').css('background', '#a3a3a3');
+                $('#gray_n h5').css('color', 'var(--font-cSub2)');
+            });
+
+            //메인배너
+            let i=0;
+            let speed = 800;
+            let timing = 3000;
+            let $mainBanner = $('#main_banner');
+            let $banner = $('#banner');
+            let $bannerA = $('#banner li a')
+            let $btnGroup = $('#btnGroup li');
+
+            let wid = $bannerA.width();
+            let num = $btnGroup.length ;
+
+            doSlide();
+            function doSlide(){
+                $btnGroup.click(function(e){
+                    e.preventDefault();
+                    let index = $(this).index();
+                    i=index;
+                    $btnGroup.children('a').removeClass('on');
+                    $(this).children('a').addClass('on');
+
+                    $banner.animate({'marginLeft':-wid*i},speed);
+                });
+            }
+            autoPlay();
+            function autoPlay(){
+                setInterval(function(){
+                    i++;
+                    if(i==num) i=0;
+                    $btnGroup.children('a').removeClass('on');
+                    $btnGroup.eq(i).children('a').addClass('on');
+
+                    $banner.animate({'marginLeft':-wid*i},speed);
+                },timing);
+            }
+            /*가운데로 오게 하기는 성공했으나 marginLeft값의 즉각적인 대응이 안됨. 새로고침 시 적용됨*/
+
+            // e. header
+
+
+            
+            $('#o_box1_h').hover(
+                function(){
+                    $('#o_box1_h').css('opacity','1');
+                },
+                function(){
+                    $('#o_box1_h').css('opacity','0');
+                }
+            );
+            $('#o_box2_h').hover(
+                function(){
+                    $('#o_box2_h').css('opacity','1');
+                },
+                function(){
+                    $('#o_box2_h').css('opacity','0');
+                }
+            );
+            $('#o_box3_h').hover(
+                function(){
+                    $('#o_box3_h').css('opacity','1');
+                },
+                function(){
+                    $('#o_box3_h').css('opacity','0');
+                }
+            );
+            $('#o_box4_h').hover(
+                function(){
+                    $('#o_box4_h').css('opacity','1');
+                },
+                function(){
+                    $('#o_box4_h').css('opacity','0');
+                }
+            );
+            $('#o_box5_h').hover(
+                function(){
+                    $('#o_box5_h').css('opacity','1');
+                },
+                function(){
+                    $('#o_box5_h').css('opacity','0');
+                }
+            );
+
+
+
+
+            //운영기관
+            let operationBox = $('.oBoxWrap')
+
+            $('.oRightBtn').click(function(e){
+                e.preventDefault();
+                //마진으로 보낸 후 맨 뒤로 보내야함
+                $('.oBoxWrap>div:first-child').stop().animate({'marginLeft':'-348px'},500,function(){
+                    $(this).appendTo(operationBox).removeAttr('style')
+                });
+                operationBox.stop().animate({'marginLeft':'0'},500);
+            });
+            $('.oLeftBtn').click(function(e){
+                e.preventDefault();
+                $('.oBoxWrap>div:last-child').prependTo(operationBox);
+                operationBox.css('marginLeft','-348px');
+                operationBox.stop().animate({'marginLeft': '0'},500);
+            });
+
+
+        });
+    </script>
+</head>
+<body>
+    <div id="header_wrap">
+        <header>
+            <div id="logo"><a href="Index.html"><img src="img/logo.png" alt=""></a></div>
+            <div id="right">
+                <div id="top_menu">
+                    <ul id="top">
+                        <li><a href="login.html">로그인</a></li>
+                        <li><a href="join.html">회원가입</a></li>
+                        <li><a href="#">사이트맵</a></li>
+                        <li><a href="#"><img src="img/search.png" alt=""></a></li>
+                    </ul>
+                </div>
+                <div id="main_menu">
+                    <ul id="main">
+                        <li><a href="apap.html">공연·전시</a></li>
+                        <li><a href="apap.html">문화사업</a></li>
+                        <li><a href="apap.html">문화교육</a></li>
+                        <li><a href="apap.html">시설·대관</a></li>
+                        <li><a href="apap.html">커뮤니티</a></li>
+                        <li><a href="apap.html">아카이브</a></li>
+                        <li><a href="apap.html">안양문화예술재단</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div id="menu_sidebar">
+                <ul id="side_menu">
+                    <li class="bars"><a href="#"><img src="img/bars.png" alt=""></a></li>
+                    <li class="sMenuBar">
+                        <a href="#" class="barclose"><img src="img/barclose.png" alt=""></a>
+                        <ul id="sTop">
+                            <li><a href="login.html">로그인</a></li>
+                            <li><a href="join.html">회원가입</a></li>
+                        </ul>
+                        <ul id="sMenu">
+                            <li><a href="apap.html">공연·전시</a>
+                                <ul class="sub">
+                                    <li><a href="apap.html">공연ㆍ전시일정</a></li>
+                                    <li><a href="apap.html">예매안내</a></li>
+                                    <li><a href="apap.html">좌석배치도</a></li>
+                                    <li><a href="apap.html">관람예절</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="apap.html">문화사업</a>
+                                <ul class="sub">
+                                    <li><a href="apap.html">안양공공예술프로젝트</a></li>
+                                    <li><a href="apap.html">안양박물관</a></li>
+                                    <li><a href="apap.html">김중업건축박물관</a></li>
+                                    <li><a href="apap.html">박물관 유물 구입ㆍ기증</a></li>
+                                    <li><a href="apap.html">문화축제</a></li>
+                                    <li><a href="apap.html">찾아가는 공연</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="apap.html">문화교육</a>
+                                <ul class="sub">
+                                    <li><a href="#">평촌아트홀 아카데미</a></li>
+                                    <li><a href="#">박물관 강좌</a></li>
+                                    <li><a href="#">문화특강</a></li>
+                                    <li><a href="#">수강현황</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="apap.html">시설·대관</a>
+                                <ul class="sub">
+                                    <li><a href="#">시설현황</a></li>
+                                    <li><a href="#">대관신청안내</a></li>
+                                    <li><a href="#">대관신청시스템</a></li>
+                                    <li><a href="#">대관절차</a></li>
+                                    <li><a href="#">대관규정</a></li>
+                                    <li><a href="#">시설사용료</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="apap.html">커뮤니티</a>
+                                <ul class="sub">
+                                    <li><a href="#">공지사항</a></li>
+                                    <li><a href="#">PRESS</a></li>
+                                    <li><a href="#">문화가 있는 날</a></li>
+                                    <li><a href="#">교류협력단체소식</a></li>
+                                    <li><a href="#">고객의소리</a></li>
+                                    <li><a href="#">관람후기</a></li>
+                                    <li><a href="#">이벤트</a></li>
+                                    <li><a href="#">설문조사</a></li>
+                                    <li><a href="#">FAQ</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="apap.html">아카이브</a>
+                                <ul class="sub">
+                                    <li><a href="#">터무늬ZINE</a></li>
+                                    <li><a href="#">디지털 웹진</a></li>
+                                    <li><a href="#">정기간행물</a></li>
+                                    <li><a href="#">자료실</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="apap.html">안양문화예술재단</a>
+                                <ul class="sub">
+                                    <li><a href="#">인사말</a></li>
+                                    <li><a href="#">연혁</a></li>
+                                    <li><a href="#">미션과 비전</a></li>
+                                    <li><a href="#">운영시설</a></li>
+                                    <li><a href="#">조직과 기구</a></li>
+                                    <li><a href="#">윤리경영</a></li>
+                                    <li><a href="#">CI소개</a></li>
+                                    <li><a href="#">오시는길</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </header>
+        <div class="clear"></div>
+        <nav>
+            <div id="video_wrap">
+                <video src="img/apap.mp4" autoplay muted loop></video>
+            </div>
+            <div id="sub_bar">
+                <div id="clearbox"></div>
+                <ul id="sub_menu">
+                    <li>
+                        <ul class="sub">
+                            <li><a href="#">공연ㆍ전시일정</a></li>
+                            <li><a href="#">예매안내</a></li>
+                            <li><a href="#">좌석배치도</a></li>
+                            <li><a href="#">관람예절</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul class="sub">
+                            <li><a href="apap.html">안양공공예술프로젝트</a></li>
+                            <li><a href="apap.html">안양박물관</a></li>
+                            <li><a href="apap.html">김중업건축박물관</a></li>
+                            <li><a href="apap.html">박물관 유물 구입ㆍ기증</a></li>
+                            <li><a href="apap.html">문화축제</a></li>
+                            <li><a href="apap.html">찾아가는 공연</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul class="sub">
+                            <li><a href="#">평촌아트홀 아카데미</a></li>
+                            <li><a href="#">박물관 강좌</a></li>
+                            <li><a href="#">문화특강</a></li>
+                            <li><a href="#">수강현황</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul class="sub">
+                            <li><a href="#">시설현황</a></li>
+                            <li><a href="#">대관신청안내</a></li>
+                            <li><a href="#">대관신청시스템</a></li>
+                            <li><a href="#">대관절차</a></li>
+                            <li><a href="#">대관규정</a></li>
+                            <li><a href="#">시설사용료</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul class="sub">
+                            <li><a href="#">공지사항</a></li>
+                            <li><a href="#">PRESS</a></li>
+                            <li><a href="#">문화가 있는 날</a></li>
+                            <li><a href="#">교류협력단체소식</a></li>
+                            <li><a href="#">고객의소리</a></li>
+                            <li><a href="#">관람후기</a></li>
+                            <li><a href="#">이벤트</a></li>
+                            <li><a href="#">설문조사</a></li>
+                            <li><a href="#">FAQ</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul class="sub">
+                            <li><a href="#">터무늬ZINE</a></li>
+                            <li><a href="#">디지털 웹진</a></li>
+                            <li><a href="#">정기간행물</a></li>
+                            <li><a href="#">자료실</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul class="sub">
+                            <li><a href="#">인사말</a></li>
+                            <li><a href="#">연혁</a></li>
+                            <li><a href="#">미션과 비전</a></li>
+                            <li><a href="#">운영시설</a></li>
+                            <li><a href="#">조직과 기구</a></li>
+                            <li><a href="#">윤리경영</a></li>
+                            <li><a href="#">CI소개</a></li>
+                            <li><a href="#">오시는길</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <!-- e. header_wrap-->
+
+
+    <section id="main_img">
+        <div id="main_banner">
+            <ul id="banner">
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+            </ul>
+        </div>
+        <div>
+            <a href="#" class="next">next</a>
+        </div>
+        <ul id="btnGroup">
+            <li id="btn0"><a href="#" class="on"> </a></li>
+            <li id="btn1"><a href="#"> </a></li>
+            <li id="btn2"><a href="#"> </a></li>
+            <li id="btn3"><a href="#"> </a></li>
+        </ul>
+    </section>
+
+    <div class="clear"></div>
+    <!-- e. main_img -->
+    
+
+    <section id="notice_wrap">
+        <div id="notice_header">
+            <h2>NOTICE</h2>
+            <div id="notice_bar"></div>
+            <div id="black_n">
+                <div class="circle" id="red1"></div>
+                <a href="#"><h5>공지사항</h5></a>
+            </div>
+            <div id="gray_n">
+                <div class="circle" id="gray"></div>
+                <a href="#"><h5>보도자료</h5></a>
+            </div>
+            <a href="#"><img src="img/plus.png" alt=""></a>
+        </div>
+        <div id="notice_box_wrap">
+            <div id="notice_box">
+                <div class="n_box"><a href="#">
+                    <h4>[채용]  안양문화예술재단 임원
+                        공개모집 공고</h4>
+                    <h6>안양문화예술재단에서 문화예술 진흥
+                        및 시민의 문화향수 기회 확대 등을 
+                        위하여 헌신하실 임원(비상임이사 및
+                        비상임감사)을 다음과 같이 공개모집 
+                        하오니 전문성과 역량을 지니신 많은
+                        분들의 지원을 바랍니다.</h6>
+                    <p>2021.01.19</p>
+                </a></div>
+                <div class="n_box"><a href="#">
+                    <h4>[안내]  안양박물관 기획전
+                        [안양사의 흔적] 증정 이벤트</h4>
+                    <h6>안녕하세요, 안양박물관에서 기획전
+                        포스터 무료증정 이벤트 진행합니다.
+                        2020년 안양박물관 기획전 
+                        "안양의 기틀을 다지다, 안양사의 
+                        흔적"기간 동안 전시를 직접 방문해
+                        주시는 관람객에게 메인포스터를 무료로 증정해드립니다. </h6>
+                    <p>2021.01.12</p>
+                </a></div>
+                <div class="n_box"><a href="#">
+                    <h4>[안내]  “코로나19” 예방 
+                        공공예술작품 임시 폐쇄 알림 </h4>
+                    <h6>신종 코로나19 바이러스 위험 단계가 
+                        "심각" 단계로 격상되고, 안양지역에
+                        도 확진자가 발생하는 등 바이러스가
+                        계속 확산됨에 따라 안양공공예술프
+                        로젝트(APAP) 예술작품 중 여러 사람이 
+                        출입 가능한 공간으로 구성된 
+                        일부 작품을 상황이 종료될…</h6>
+                    <p>2021.01.12</p>
+                </a></div>
+                <div class="n_box"><a href="#">
+                    <h4>[안내]  안양문화예술재단 주요
+                        시설 운영 제한 안내</h4>
+                    <h6>안양문화예술재단의 주요 시설은 중
+                        앙재난안전대책본부의 사회적 거리
+                        두기 2.5단계 상향 조정 결정에 따라
+                        시설별 수용가능인원의 30% 이하로
+                        운영됩니다. 비말 형성 프로그램(노래,
+                        악기연주, 무용, 체육, 스피치 등) 운영은 일단 금지되며, 시설 내 음…</h6>
+                    <p>2020.12.08</p>
+                </a></div>
+            </div>
+        </div>
+        <div id="press_box_wrap">
+            <div id="press_box">
+                <div class="p_box"><a href="#">
+                    <h4>문화·예술 아카데미 무료 온라인 특강 24강좌 유튜브 공개</h4>
+                    <h6>안양문화예술재단(이사장 최대호)은 지난 1월 11일(월)부터 누구나 언제 어디서든 참여 
+                        가능한 ‘평촌아트홀 문화·예술 아카데미 온라인 특강’ 24강좌를 안양문화예술재단 유튜브 
+                        채널에 공개하였다. 2004년부터 운영해온 평촌아트홀 문화·예술 아카…</h6>
+                    <p>2021.01.15</p>
+                </a></div>
+                <div class="p_box"><a href="#">
+                    <h4>안양박물관 [안양사의 흔적] 3DVR 온라인전시 오픈</h4>
+                    <h6>안양문화예술재단(이사장 최대호)은 지난 2021년 1월 1일(금)부터 박물관 홈페이지를 통하여 
+                        안양박물관 기획전시를 온라인으로 공개하였다. 이번 온라인 전시는 코로나19로 인하여 박물관 
+                        관람이 어려운 상황에서도 안양박물관 기획전시를 온라인으…</h6>
+                    <p>2021.01.15</p>
+                </a></div>
+                <div class="p_box"><a href="#">
+                    <h4>안양문화예술재단 스마트폰 공공예술작품해설 서비스 <APAP 오디오 투어> 시작</h4>
+                    <h6>안양문화예술재단(이사장 최대호)은 안양시 전역에 있는 공공예술 예술작품들을 스마트폰에서 
+                        감상할 수 있는 온라인 해설 서비스를 12월14일(월)부터 시작했다.
+                        2005년 첫 개최 이후 올해 15년을 맞이한 안양공공예술프로젝트는 언택트 라이프 시대에 발…</h6>
+                    <p>2020.12.31</p>
+                </a></div>
+                <div class="p_box"><a href="#">
+                    <h4>안양문화예술재단 기획전시 [안양사의 흔적] 개최 </h4>
+                    <h6>안양문화예술재단(이사장 최대호)는 안양박물관에서 오는 2020년 12월 22일(화)부터 
+                        2021년 2월 19일(금)까지 [안양의 기틀을 다지다, 안양사의 흔적]을 주제로 기획전시를 개최한다.
+                        이번 안양박물관 기획전시는 안양의 지명 유래가 된 ‘안양사’의…</h6>
+                    <p>2020.12.22</p>
+                </a></div>
+            </div>
+        </div>
+    </section>
+    <div class="clear"></div>
+    <!-- e. notice_wrap -->
+
+
+    <section id="schedulenotice_wrap">
+        <div id="schedule_header">
+            <h2>이달의 일정</h2>
+            <div id="schedule_bar"></div>
+            <div class="black">
+                <div class="circle" id="red2"></div>
+                <h5>전시안내</h5>
+            </div>
+            <div class="black">
+                <div class="circle" id="orange"></div>
+                <h5>대관현황</h5>
+            </div>
+            <div class="black">
+                <div class="circle" id="blue"></div>
+                <h5>프로그램</h5>
+            </div>
+        </div>
+        <div id="schedule">
+            <div id="schedule_left">
+                <img src="img/schedule_arrow_left.png" alt="">
+                <h6>2021.01</h6>
+                <img src="img/schedule_arrow_right.png" alt="">
+            </div>
+            <div id="schedule_right">
+                <table>
+                    <tr id="schedule_icon">
+                        <td><a href="#"><img src="img/mark_day.png" alt=""></a></td>
+                        <td><a href="#"><img src="img/mark_weekend.png" alt=""></a></td>
+                        <td><a href="#"><img src="img/mark_weekend.png" alt=""></a></td>
+                        <td><a href="#"><img src="img/mark_day.png" alt=""></a></td>
+                        <td><a href="#"><img src="img/mark_day.png" alt=""></a></td>
+                        <td><a href="#"><img src="img/mark_day.png" alt=""></a></td>
+                        <td><a href="#"><img src="img/mark_day.png" alt=""></a></td>
+                        <td><a href="#"><img src="img/mark_day.png" alt=""></a></td>
+                        <td><a href="#"><img src="img/mark_weekend.png" alt=""></a></td>
+                        <td><a href="#"><img src="img/mark_weekend.png" alt=""></a></td>
+                        <td><a href="#"><img src="img/mark_day.png" alt=""></a></td>
+                        <td><a href="#"><img src="img/mark_day.png" alt=""></a></td>
+                        <td><a href="#"><img src="img/mark_day.png" alt=""></a></td>
+                        <td><a href="#"><img src="img/mark_day.png" alt=""></a></td>
+                        <td><a href="#"><img src="img/mark_day.png" alt=""></a></td>
+                        <td><a href="#"><img src="img/mark_weekend.png" alt=""></a></td>
+                        <td><a href="#"><img src="img/mark_weekend.png" alt=""></a></td>
+                        <td><a href="#"><img src="img/mark_day.png" alt=""></a></td>
+                        <td><a href="#"><img src="img/mark_day.png" alt=""></a></td>
+                        <td><a href="#"><img src="img/mark_day.png" alt=""></a></td>
+                        <td><a href="#"><img src="img/mark_day.png" alt=""></a></td>
+                        <td><a href="#"><img src="img/mark_day.png" alt=""></a></td>
+                        <td><a href="#"><img src="img/mark_weekend.png" alt=""></a></td>
+                        <td><a href="#"><img src="img/mark_weekend.png" alt=""></a></td>
+                        <td><a href="#"><img src="img/mark_day.png" alt=""></a></td>
+                        <td><a href="#"><img src="img/mark_day.png" alt=""></a></td>
+                        <td><a href="#"><img src="img/mark_day.png" alt=""></a></td>
+                        <td><a href="#"><img src="img/mark_day.png" alt=""></a></td>
+                        <td><a href="#"><img src="img/mark_day.png" alt=""></a></td>
+                        <td><a href="#"><img src="img/mark_weekend.png" alt=""></a></td>
+                        <td><a href="#"><img src="img/mark_weekend.png" alt=""></a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="#">1</a></td>
+                        <td><a href="#">2</a></td>
+                        <td><a href="#">3</a></td>
+                        <td><a href="#">4</a></td>
+                        <td><a href="#">5</a></td>
+                        <td><a href="#">6</a></td>
+                        <td><a href="#">7</a></td>
+                        <td><a href="#">8</a></td>
+                        <td><a href="#">9</a></td>
+                        <td><a href="#">10</a></td>
+                        <td><a href="#">11</a></td>
+                        <td><a href="#">12</a></td>
+                        <td><a href="#">13</a></td>
+                        <td><a href="#">14</a></td>
+                        <td><a href="#">15</a></td>
+                        <td><a href="#">16</a></td>
+                        <td><a href="#">17</a></td>
+                        <td><a href="#">18</a></td>
+                        <td><a href="#">19</a></td>
+                        <td><a href="#">20</a></td>
+                        <td><a href="#">21</a></td>
+                        <td><a href="#">22</a></td>
+                        <td><a href="#">23</a></td>
+                        <td><a href="#">24</a></td>
+                        <td><a href="#">25</a></td>
+                        <td><a href="#">26</a></td>
+                        <td><a href="#">27</a></td>
+                        <td><a href="#">28</a></td>
+                        <td><a href="#">29</a></td>
+                        <td><a href="#">30</a></td>
+                        <td><a href="#">31</a></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div id="schedule_box">
+            <div id="sbox1">
+                <h3>전시안내</h3>
+                <div id="sb1_1">
+                    <a href="#">
+                        <img src="img/information1.png" alt="">
+                        <h4>APAP 아카이브 상설전시</h4>
+                        <h4>APAP ARCHIVE EXHIBITION</h4>
+                        <ul>
+                            <li>장 소<span>안양 파빌리온 ANYANG PAVILION</span></li>
+                            <li>기 간<span>2020.10.27 ~</span></li>
+                        </ul>
+                    </a>
+                </div>
+                <div id="sb1_2">
+                    <a href="#">
+                        <img src="img/information2.png" alt="">
+                        <h4>안양사의 흔적-안양의 기틀을 다지다</h4>
+                        <ul>
+                            <li>장 소<span>안양박물관</span></li>
+                            <li>기 간<span>2020.12.22 ~ 2021.02.19</span></li>
+                        </ul>
+                    </a>
+                </div>
+            </div>
+            <div id="sbox2">
+                <h3>대관현황</h3>
+                <div id="sb2_1">
+                    <a href="#">
+                        <img src="img/rent1.png" alt="">
+                        <h4>[ 안양 아트센터 ] 관악홀</h4>
+                        <ul>
+                            <li>대 관 기 간<span>2020.11.07 ~ 2021.01.31</span></li>
+                            <li>예 약 여 부<span class="og">예약완료</span></li>
+                        </ul>
+                    </a>
+                </div>
+                <div id="sb2_2">
+                    <a href="#">
+                        <img src="img/rent2.png" alt="">
+                        <h4>[ 평촌 아트홀 ] 아트홀 공연장</h4>
+                        <ul>
+                            <li>대 관 기 간<span>2020.12.22 ~ 2021.01.31</span></li>
+                            <li>예 약 여 부<span class="og">예약완료</span></li>
+                        </ul>
+                    </a>
+                </div>
+            </div>
+            <div id="sbox3">
+                <h3>프로그램</h3>
+                <div id="sb3_1">
+                    <a href="#">
+                        <img src="img/program1.png" alt="">
+                        <h4>[ 모여라 박물관숲 (모박숲) ]</h4>
+                        <h4>뚝딱뚝딱 어린이건축가-팝업도시편</h4>
+                        <ul>
+                            <li>대 상<span>어린이 및 일반시민 누구나</span></li>
+                            <li>장 소<span>비대면 프로그램</span></li>
+                            <li>금 액<span>무료</span></li>
+                            <li>기 간<span>2021.01.04 ~ 2021.02.28</span></li>
+                        </ul>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="clear"></div>
+    <!-- e. schedulenotice_wrap -->
+
+
+    <section id="culture_wrap">
+        <div id="culture_header">
+            <h2>문화교육</h2>
+            <div id="culture_bar"></div>
+            <a href="#"><img src="img/plus.png" alt=""></a>
+        </div>
+        <div id="culture_box">
+            <div id="c_box1">
+                <a href="#">
+                    <img src="img/culture1.png" alt="">
+                    <h3>2019 - 2020 문화다양성 아트프로젝트 토론회</h3>
+                    <ul>
+                        <li>제&nbsp;&nbsp;&nbsp;목<span>에필로그 - 老how;knowhow</span></li>
+                        <li>내&nbsp;&nbsp;&nbsp;용<span>문화다양성 확산을 위한 기반 조성사업</span></li>
+                        <li>주&nbsp;&nbsp;&nbsp;최<span>안양문화예술재단</span></li>
+                        <li>주&nbsp;&nbsp;&nbsp;관<span>오픈더드로어</span></li>
+                    </ul>
+                </a>
+            </div>
+            <div id="c_box2">
+                <a href="#">
+                    <img src="img/culture2.png" alt="">
+                    <h3>온라인전시(3DVR)  "안양사의 흔적"</h3>
+                    <ul>
+                        <li>개&nbsp;&nbsp;&nbsp;관<span>2021.01.01</span></li>
+                        <li>내&nbsp;&nbsp;&nbsp;용<span>2020년 안양박물관 기획전 "안양사의 흔적" 3DVR 온라인전시</span></li>
+                        <li>문&nbsp;&nbsp;&nbsp;의<span>031-687-0909</span></li>
+                        <li>장&nbsp;&nbsp;&nbsp;소<span>온라인(비대면)</span></li>
+                        <li>금&nbsp;&nbsp;&nbsp;액<span>무료</span></li>
+                    </ul>
+                </a>
+            </div>
+        </div>
+    </section>
+    <div class="clear"></div>
+    <!-- e. culture_wrap -->
+
+
+    <section id="operation_wrap">
+        <div id="operation_header">
+            <h2>운영시설소개</h2>
+            <div id="operation_bar"></div>
+            <a href="#"><img src="img/left_arrow.png" alt="" class="oLeftBtn"></a>
+            <a href="#"><img src="img/right_arrow.png" alt="" class="oRightBtn"></a>
+        </div>
+        <div id="operation_box">
+            <div class="oBoxWrap">
+                <div class="obox">
+                    <div id="o_box1">
+                        <a href="#"><img src="img/operation1.png" alt=""></a>
+                        <a href="#"><h5>안양아트센터</h5></a>
+                    </div>
+                    <div id="o_box1_h">
+                        <a href="#"><h1>지역문화의 허브</h1></a>
+                        <a href="#"><h4>Anyang Arts Center</h4></a>
+                    </div>
+                </div>
+    
+                <div class="obox">
+                    <div id="o_box2">
+                        <a href="#"><img src="img/operation2.png" alt=""></a>
+                        <a href="#"><h5>평촌아트홀</h5></a>
+                    </div>
+                    <div id="o_box2_h">
+                        <a href="#"><h1>도심 속 문화쉼터</h1></a>
+                        <a href="#"><h4>Pyoungchon Arts Hall</h4></a>
+                    </div>
+                </div>
+    
+                <div class="obox">
+                    <div id="o_box3">
+                        <a href="#"><img src="img/operation3.png" alt=""></a>
+                        <a href="#"><h5>안양파빌리온</h5></a>
+                    </div>
+                    <div id="o_box3_h">
+                        <a href="#"><h1>세계적인 건축거장의 선물</h1></a>
+                        <a href="#"><h4>Anyang Pavilion</h4></a>
+                    </div>
+                </div>
+    
+                <div class="obox">
+                    <div id="o_box4">
+                        <a href="#"><img src="img/operation4.png" alt=""></a>
+                        <a href="#"><h5>안양박물관</h5></a>
+                    </div>
+                    <div id="o_box4_h">
+                        <a href="#"><h1>안양의 역사와 문화</h1></a>
+                        <a href="#"><h4>Anyang Museum</h4></a>
+                    </div>
+                </div>
+    
+                <div class="obox">
+                    <div id="o_box5">
+                        <a href="#"><img src="img/operation5.png" alt=""></a>
+                        <a href="#"><h5>김중업건축박물관</h5></a>
+                    </div>
+                    <div id="o_box5_h">
+                        <a href="#"><h1>안양의 과거와 현재</h1></a>
+                        <a href="#"><h4>Architecture Museum</h4></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="clear"></div>
+    <!-- e. operation_wrap -->
+
+
+    <section id="sns_wrap">
+        <div id="sns_header">
+            <h2>SNS 소식</h2>
+            <div id="sns_bar"></div>
+        </div>
+        <div id="sns_box">
+            <div id="youtube">
+                <a href="https://youtu.be/dXH1BsyxagQ"><img src="img/youtube.png" alt=""></a>
+                <div class="s_txt">
+                    <a href="https://youtu.be/dXH1BsyxagQ">
+                        <p class="title">안양박물관 기획전시 온라인 연계강좌2 [청자를 통해 본 고려시대 중국과의 교류관계]</p>
+                        <p class="content">[안양사를 통해 이해하다]의 두번째 강연으로 안양사지에서 발굴된 고려시대 청자를 바탕으로 고려시대 중국과의 교류관계를 이해할 수 있는 강…</p>
+                        <p class="date">2021.01.22</p>
+                    </a>
+                </div>
+            </div>
+            <div id="instagram">
+                <a href="https://www.instagram.com/anyang_afca/"><img src="img/instagram.png" alt=""></a>
+                <div class="s_txt">
+                    <a href="https://www.instagram.com/anyang_afca/">
+                        <p class="title">[2020년 안양박물관 기획전 1분 투어!]</p>
+                        <p class="content">안녕하세요. 안양문화예술재단입니다.
+                            "안양의 기틀을 다지다, 안양사의 흔적" 기획전의
+                            1분 투어 영상을 공개합니다!
+                            <br> 2020년 안양박물관 기획전은 2021년 2월 19일…</p>
+                        <p class="date">2021.01.15</p>
+                    </a>
+                </div>
+            </div>
+            <div id="facebook">
+                <a href="https://www.facebook.com/eafca/"><img src="img/facebook.png" alt=""></a>
+                <div class="s_txt">
+                    <a href="https://www.facebook.com/eafca/">
+                        <p class="title">2021년 신축년 새해가 밝았습니다.</p>
+                        <p class="content">2021년 신축년 새해가 밝았습니다.
+                            새해에도 가정에 사랑과 평안이 가득하시길 바랍니다. 시민여러분들께 행복을 안겨줄 수 있도록 노력하는 안양문화예술재단이 되겠습니다.
+                            <br> 새해 복 많이 받으세요♥</p>
+                        <p class="date">2021.01.01</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="clear"></div>
+    <!-- e. sns_wrap -->
+    
+    
+    <footer>
+        <section id="footer_wrap">
+            <img src="img/logo_black.png" alt="">
+            <div id="f_box1">
+                <ul>
+                    <li>(우 14093) 경기도 안양시 만안구 문예로36번길 16 (안양동) <br>
+                        <span>전화</span> 031.687.0500 <span>팩스</span> 031.689.5000</li>
+                    <li>Copyright ⓒ 2016 Anyang Foundation for Culture&Arts. All Rights Reserved.</li>
+                </ul>
+            </div>
+            <div id="f_box2">
+                    <!-- <h6>운영기관 바로가기</h6>
+                    <a href="#"><img src="img/down_arrow.png" alt=""></a> -->
+                <div id="footer_box">
+                    <select name="" id="">
+                        <option value>운영기관 바로가기</option>
+                        <option value="안양문화예술재단">안양문화예술재단</option>
+                        <option value="안양아트센터">안양아트센터</option>
+                        <option value="평촌아트홀">평촌아트홀</option>
+                        <option value="안양파빌리온">안양파빌리온</option>
+                        <option value="안양박물관">안양박물관</option>
+                        <option value="김중업건축박물관">김중업건축박물관</option>
+                    </select>
+                </div>
+                
+                <div id="f_txt">
+                    <a href="#"><p class="fTxtRight"><span>개인정보처리방침</span></p></a>
+                    <img src="img/footer_bar.png" alt="">
+                    <a href="#"><p class="fTxtLeft">개인정보위탁현황</p></a>
+                </div>
+            </div>
+        </section>
+    </footer>
+</body>
+</html>

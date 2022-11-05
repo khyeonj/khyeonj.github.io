@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/apap.css">
+    <link rel="shortcut icon" href="img/ayac_icon.ico" type="image/x-icon">
+    <title>안양공공예술프로젝트</title>
+    <script>
+        $(function(){
+            //gnb
+            $('#main').mouseenter(function(){
+                $('nav').stop().slideDown(800);
+            });
+            $('nav').mouseleave(function(){
+                $(this).stop().slideUp(800);
+            });
+
+            $('#main>li').mouseenter(function(){
+                $(this).css('border-bottom','7px solid var(--font-cSub3)');
+            });
+            $('nav').mouseleave(function(){
+                $('#main>li').css('border-bottom','none');
+            });
+
+            //모바일 메뉴
+            $('.bars').click(function(){
+                $('.sMenuBar').css('display','block').animate({'right':'0%'},500);
+            });
+            $('.barclose').click(function(e){
+                e.preventDefault();
+                $('.sMenuBar').animate({'right':'-45%'},300,function(){
+                    $('.sMenuBar').css('display','none');
+                });
+            });
+            $('#sMenu>li').click(function(){
+                $('.sub').css('display','none');
+                $(this).children('.sub').stop().slideDown(500);
+                return false
+            });
+            $( '.sub>li' ).click(function(){
+                location.replace('apap.html');
+            });
+
+            $('#gray_n').click(function(){
+                $('#notice_box_wrap').css('display' , 'none');
+                $('#red1').css('background', '#a3a3a3');
+                $('#black_n h5').css('color', 'var(--font-cSub2)');
+
+                $('#press_box_wrap').css('display' , 'block');
+                $('#gray').css('background', '#d0111b');
+                $('#gray_n h5').css('color', 'var(--font-color)');
+            });
+            $('#black_n').click(function(){
+                $('#notice_box_wrap').css('display' , 'block');
+                $('#red1').css('background', '#d0111b');
+                $('#black_n h5').css('color', 'var(--font-color)');
+
+                $('#press_box_wrap').css('display' , 'none');
+                $('#gray').css('background', '#a3a3a3');
+                $('#gray_n h5').css('color', 'var(--font-cSub2)');
+            });
+
+            // e. header
+            
+
+            //스크롤
+
+            let st1 = $('.st1').offset().top;
+            let st2 = $('.st2').offset().top;
+            let st3 = $('.st3').offset().top;
+            function resetBtn(){
+                $('#sub_title>ul>li>a').removeClass('on');
+            }
+            function btnAdd(subtitle){
+                $(subtitle).addClass('on');
+            }
+            
+            $('.st1').click(function(e){
+                e.preventDefault();
+                let target = $(this).attr('href');
+                let target_pos = $(target).offset().top;
+                resetBtn();
+                btnAdd('.st1');
+                $('html, body').stop().animate({'scrollTop':0},1500);
+            });
+            $('.st2').click(function(e){
+                e.preventDefault();
+                let target = $(this).attr('href');
+                let target_pos = $(target).offset().top;
+                resetBtn();
+                btnAdd('.st2');
+                $('html, body').stop().animate({'scrollTop':target_pos},1500);
+            });
+            $('.st3').click(function(e){
+                e.preventDefault();
+                let target = $(this).attr('href');
+                let target_pos = $(target).offset().top;
+                resetBtn();
+                btnAdd('.st3');
+                $('html, body').stop().animate({'scrollTop':target_pos},1500);
+            });
+            
+
+            //사진 클릭
+            $('.pl_img1 h5').hide();
+            $('.pl_img1 a').click(function(){
+                let path = $(this).attr('href');
+                $('.pl_left1 img').css('opacity','0').attr('src',path).animate({'opacity':'1'},500);
+
+                $('.caption').remove();
+                let h5Txt = $(this).next('h5').text();
+                $('.pl_left1').append('<div class="caption"></div>');
+                $('.caption').text(h5Txt);
+
+                $('.pl_left1>h5').css('display','none');
+                $('.caption').css('opacity','0').animate({'opacity':'1'} , 500);
+                return false
+            });
+
+            $('.pl_img2 h5').hide();
+            $('.pl_img2 a').click(function(){
+                let path = $(this).attr('href');
+                $('.pl_left2 img').css('opacity','0').attr('src',path).animate({'opacity':'1'},500);
+
+                $('.caption').remove();
+                let h5Txt = $(this).next('h5').text();
+                $('.pl_left2').append('<div class="caption"></div>');
+                $('.caption').text(h5Txt);
+
+                $('.pl_left2>h5').css('display','none');
+                $('.caption').css('opacity','0').animate({'opacity':'1'} , 500);
+                return false
+            });
+
+            $('.pr_img1 h5').hide();
+            $('.pr_img1 a').click(function(){
+                let path = $(this).attr('href');
+                $('.pr_right1 img').css('opacity','0').attr('src',path).animate({'opacity':'1'},500);
+
+                $('.caption').remove();
+                let h5Txt = $(this).next('h5').text();
+                $('.pr_right1').append('<div class="caption"></div>');
+                $('.caption').text(h5Txt);
+
+                $('.pr_right1>h5').css('display','none');
+                $('.caption').css('opacity','0').animate({'opacity':'1'} , 500);
+                return false
+            });
+
+            $('.pr_img2 h5').hide();
+            $('.pr_img2 a').click(function(){
+                let path = $(this).attr('href');
+                $('.pr_right2 img').css('opacity','0').attr('src',path).animate({'opacity':'1'},500);
+
+                $('.caption').remove();
+                let h5Txt = $(this).next('h5').text();
+                $('.pr_right2').append('<div class="caption"></div>');
+                $('.caption').text(h5Txt);
+
+                $('.pr_right2>h5').css('display','none');
+                $('.caption').css('opacity','0').animate({'opacity':'1'} , 500);
+                return false
+            });
+
+            $('.pr_img3 h5').hide();
+            $('.pr_img3 a').click(function(){
+                let path = $(this).attr('href');
+                $('.pr_right3 img').css('opacity','0').attr('src',path).animate({'opacity':'1'},500);
+
+                $('.caption').remove();
+                let h5Txt = $(this).next('h5').text();
+                $('.pr_right3').append('<div class="caption"></div>');
+                $('.caption').text(h5Txt);
+
+                $('.pr_right3>h5').css('display','none');
+                $('.caption').css('opacity','0').animate({'opacity':'1'} , 500);
+                return false
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="header_wrap">
+        <header>
+            <div id="logo"><a href="Index.html"><img src="img/logo.png" alt=""></a></div>
+            <div id="right">
+                <div id="top_menu">
+                    <ul id="top">
+                        <li><a href="login.html">로그인</a></li>
+                        <li><a href="join.html">회원가입</a></li>
+                        <li><a href="#">사이트맵</a></li>
+                        <li><a href="#"><img src="img/search.png" alt=""></a></li>
+                    </ul>
+                </div>
+                <div id="main_menu">
+                    <ul id="main">
+                        <li><a href="apap.html">공연·전시</a></li>
+                        <li><a href="apap.html">문화사업</a></li>
+                        <li><a href="apap.html">문화교육</a></li>
+                        <li><a href="apap.html">시설·대관</a></li>
+                        <li><a href="apap.html">커뮤니티</a></li>
+                        <li><a href="apap.html">아카이브</a></li>
+                        <li><a href="apap.html">안양문화예술재단</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div id="menu_sidebar">
+                <ul id="side_menu">
+                    <li class="bars"><a href="#"><img src="img/bars.png" alt=""></a></li>
+                    <li class="sMenuBar">
+                        <a href="#" class="barclose"><img src="img/barclose.png" alt=""></a>
+                        <ul id="sTop">
+                            <li><a href="login.html">로그인</a></li>
+                            <li><a href="join.html">회원가입</a></li>
+                        </ul>
+                        <ul id="sMenu">
+                            <li><a href="apap.html">공연·전시</a>
+                                <ul class="sub">
+                                    <li><a href="apap.html">공연ㆍ전시일정</a></li>
+                                    <li><a href="apap.html">예매안내</a></li>
+                                    <li><a href="apap.html">좌석배치도</a></li>
+                                    <li><a href="apap.html">관람예절</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="apap.html">문화사업</a>
+                                <ul class="sub">
+                                    <li><a href="apap.html">안양공공예술프로젝트</a></li>
+                                    <li><a href="apap.html">안양박물관</a></li>
+                                    <li><a href="apap.html">김중업건축박물관</a></li>
+                                    <li><a href="apap.html">박물관 유물 구입ㆍ기증</a></li>
+                                    <li><a href="apap.html">문화축제</a></li>
+                                    <li><a href="apap.html">찾아가는 공연</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="apap.html">문화교육</a>
+                                <ul class="sub">
+                                    <li><a href="#">평촌아트홀 아카데미</a></li>
+                                    <li><a href="#">박물관 강좌</a></li>
+                                    <li><a href="#">문화특강</a></li>
+                                    <li><a href="#">수강현황</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="apap.html">시설·대관</a>
+                                <ul class="sub">
+                                    <li><a href="#">시설현황</a></li>
+                                    <li><a href="#">대관신청안내</a></li>
+                                    <li><a href="#">대관신청시스템</a></li>
+                                    <li><a href="#">대관절차</a></li>
+                                    <li><a href="#">대관규정</a></li>
+                                    <li><a href="#">시설사용료</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="apap.html">커뮤니티</a>
+                                <ul class="sub">
+                                    <li><a href="#">공지사항</a></li>
+                                    <li><a href="#">PRESS</a></li>
+                                    <li><a href="#">문화가 있는 날</a></li>
+                                    <li><a href="#">교류협력단체소식</a></li>
+                                    <li><a href="#">고객의소리</a></li>
+                                    <li><a href="#">관람후기</a></li>
+                                    <li><a href="#">이벤트</a></li>
+                                    <li><a href="#">설문조사</a></li>
+                                    <li><a href="#">FAQ</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="apap.html">아카이브</a>
+                                <ul class="sub">
+                                    <li><a href="#">터무늬ZINE</a></li>
+                                    <li><a href="#">디지털 웹진</a></li>
+                                    <li><a href="#">정기간행물</a></li>
+                                    <li><a href="#">자료실</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="apap.html">안양문화예술재단</a>
+                                <ul class="sub">
+                                    <li><a href="#">인사말</a></li>
+                                    <li><a href="#">연혁</a></li>
+                                    <li><a href="#">미션과 비전</a></li>
+                                    <li><a href="#">운영시설</a></li>
+                                    <li><a href="#">조직과 기구</a></li>
+                                    <li><a href="#">윤리경영</a></li>
+                                    <li><a href="#">CI소개</a></li>
+                                    <li><a href="#">오시는길</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </header>
+        <div class="clear"></div>
+        <nav>
+            <div id="video_wrap">
+                <video src="img/apap.mp4" autoplay muted loop></video>
+            </div>
+            <div id="sub_bar">
+                <div id="clearbox"></div>
+                <ul id="sub_menu">
+                    <li>
+                        <ul class="sub">
+                            <li><a href="#">공연ㆍ전시일정</a></li>
+                            <li><a href="#">예매안내</a></li>
+                            <li><a href="#">좌석배치도</a></li>
+                            <li><a href="#">관람예절</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul class="sub">
+                            <li><a href="apap.html">안양공공예술프로젝트</a></li>
+                            <li><a href="apap.html">안양박물관</a></li>
+                            <li><a href="apap.html">김중업건축박물관</a></li>
+                            <li><a href="apap.html">박물관 유물 구입ㆍ기증</a></li>
+                            <li><a href="apap.html">문화축제</a></li>
+                            <li><a href="apap.html">찾아가는 공연</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul class="sub">
+                            <li><a href="#">평촌아트홀 아카데미</a></li>
+                            <li><a href="#">박물관 강좌</a></li>
+                            <li><a href="#">문화특강</a></li>
+                            <li><a href="#">수강현황</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul class="sub">
+                            <li><a href="#">시설현황</a></li>
+                            <li><a href="#">대관신청안내</a></li>
+                            <li><a href="#">대관신청시스템</a></li>
+                            <li><a href="#">대관절차</a></li>
+                            <li><a href="#">대관규정</a></li>
+                            <li><a href="#">시설사용료</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul class="sub">
+                            <li><a href="#">공지사항</a></li>
+                            <li><a href="#">PRESS</a></li>
+                            <li><a href="#">문화가 있는 날</a></li>
+                            <li><a href="#">교류협력단체소식</a></li>
+                            <li><a href="#">고객의소리</a></li>
+                            <li><a href="#">관람후기</a></li>
+                            <li><a href="#">이벤트</a></li>
+                            <li><a href="#">설문조사</a></li>
+                            <li><a href="#">FAQ</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul class="sub">
+                            <li><a href="#">터무늬ZINE</a></li>
+                            <li><a href="#">디지털 웹진</a></li>
+                            <li><a href="#">정기간행물</a></li>
+                            <li><a href="#">자료실</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul class="sub">
+                            <li><a href="#">인사말</a></li>
+                            <li><a href="#">연혁</a></li>
+                            <li><a href="#">미션과 비전</a></li>
+                            <li><a href="#">운영시설</a></li>
+                            <li><a href="#">조직과 기구</a></li>
+                            <li><a href="#">윤리경영</a></li>
+                            <li><a href="#">CI소개</a></li>
+                            <li><a href="#">오시는길</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <div class="clear"></div>
+    <!-- e. header_wrap-->
+
+    <section id="sub_title">
+        <h2>안양공공예술프로젝트</h2>
+        <ul>
+            <li><a href="#content1" class="st st1 on">APAP란?</a></li>
+            <li><a href="#content2" class="st st2">APAP가 걸어온 길</a></li>
+            <li><a href="#content3" class="st st3">역대 APAP</a></li>
+        </ul>
+    </section>
+    <div class="clear"></div>
+    <!-- e. sub_title-->
+
+    <section id="content1">
+        <div class="content_title">
+            <h2>안양공공예술프로젝트란?</h2>
+            <div id="content1_bar"></div>
+        </div>
+        <h5>안양공공예술프로젝트(Anyang Public Art Project)는 미술, 건축, 디자인 등 다양한 예술분야를 활용하여 안양의 지역적 특성과 도시 환경에 생명력을 불어 넣는 국내 유일의 국제 공공예술 행사로써 3년 마다 개최하고 있다. 안양공공예술프로젝트는 도심 환경 개선에서부터 조형물, 시민과 관객이 소통하고 직접 참여하는 프로그램에 이르기까지 다양한 형태로 추진하고 있다.</h5>
+    </section>
+    <div class="clear"></div>
+    <!-- e. content1-->
+
+    <section id="content2">
+        <div class="content_title">
+            <h2>안양공공예술프로젝트(APAP)가 걸어온 길</h2>
+            <div id="content2_bar"></div>
+        </div>
+        <h5>2005년부터 추진해온 안양공공예술프로젝트(APAP)는 4회를 진행하였으며 광주, 부산, 서울미디어 비엔날레와 더불어 국내 4대 비엔날레로 자리매김하고 있다. 또한, 뉴욕건축가협회 주최 <2011년 디자인 어워드>건축부 분에서 우수상을 수상하는 등 국내외 우수 기관과 단체에 서 그 가치를 인정받고 있다.</h5>
+        <div id="awards">
+            <div id="awards_left">
+                <div class="award_box">
+                    <h4>2008 대한민국 공공디자인전</h4>
+                    <ul>
+                        <li>분야 및 수상<span>도시환경 부문 공공기관 대상 수상</span></li>
+                        <li>주최 및 주관<span>문화체육관광부</span></li>
+                    </ul>
+                </div>
+                <div class="award_box">
+                    <h4>2009 국제공공디자인</h4>
+                    <ul>
+                        <li>분야 및 수상<span>Public Design Award 11개 부문 수상</span></li>
+                        <li>주최 및 주관<span>(재)공공디자인지역지원재단</span></li>
+                    </ul>
+                </div>
+                <div class="award_box">
+                    <h4>2011 디자인 어워드</h4>
+                    <ul>
+                        <li>분야 및 수상<span>건축부문 수상</span></li>
+                        <li>주최 및 주관<span>뉴욕건축가협회(AIANY)</span></li>
+                    </ul>
+                </div>
+                <div class="award_box">
+                    <h4>2012 로테르담 국제영화제</h4>
+                    <ul>
+                        <li>분야 및 수상<span>브라이트 퓨처 선정</span></li>
+                        <li>주최 및 주관<span>다큐영화 '다시 태어나고 싶어요, 안양에’</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div id="awards_right">
+                <div class="award_box">
+                    <h4>2012 전주국제영화제</h4>
+                    <ul>
+                        <li>분야 및 수상<span>최고상 한국장편경쟁 수상</span></li>
+                        <li>주최 및 주관<span>다큐영화 '다시 태어나고 싶어요, 안양에’</span></li>
+                    </ul>
+                </div>
+                <div class="award_box">
+                    <h4>2014 대한민국 공공디자인대상</h4>
+                    <ul>
+                        <li>분야 및 수상<span>우수사례 부문 최우수상 수상</span></li>
+                        <li>주최 및 주관<span>문화체육관광부 한국공예·디자인문화진흥원</span></li>
+                    </ul>
+                </div>
+                <div class="award_box">
+                    <h4>2016 공공미술대상</h4>
+                    <ul>
+                        <li>분야 및 수상<span>뉴트렌드 부문 대상 수상</span></li>
+                        <li>주최 및 주관<span>서울 메트로미디어</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="clear"></div>
+    <!-- e. content2-->
+
+    <section id="content3">
+        <div class="content_title">
+            <h2>역대 안양공공예술프로젝트</h2>
+            <div id="content3_bar"></div>
+        </div>
+        <div class="project_left">
+            <div class="pl_left pl_left1">
+                <img src="img/c_box1_1.png" alt="">
+                <h5>[ 지상의 낙원 ]  &emsp13;<span>문주</span></h5>
+            </div>
+            <div class="pl_right">
+                <div class="p_txt">
+                    <p>2019년</p>
+                    <h4>6회 안양공공예술프로젝트</h4>
+                    <h6>
+                        <span>‘공생도시(共生都市·Symbiotic City)’_‘안양, 함께하는 미래도시’</span>
+                        제6회 안양공공예술프로젝트(APAP6)의 주제는 ‘공생도시’, 부제는     ‘안양, 함께하는 미래도시’ 이다. 크게 ‘환경적 가치, 문화적 가치, 사회적 가치’의 세 가지 방향성을 가지고 있으며 안양중앙 공원과 안양예술공원 곳곳에서 12개 카테고리를 통해 7개국 47팀 100여 점의 작품 전시 및 다양 한 프로그램이 진행된다.
+                    </h6>
+                </div>
+                <div class="pl_img pl_img1">
+                    <a href="img/c_box1_1.png"><img src="img/c_box1_s1.png" alt=""></a>
+                    <h5>[ 지상의 낙원 ]  &emsp13;<span>문주</span></h5>
+                    <a href="img/c_box1_2.png"><img src="img/c_box1_s2.png" alt=""></a>
+                    <h5>[ 스모그 프리 타워 ]  &emsp13;<span>단</span></h5>
+                    <a href="img/c_box1_3.png"><img src="img/c_box1_s3.png" alt=""></a>
+                    <h5>[ 안양2019 ]  &emsp13;<span> 루스</span></h5>
+                    <a href="img/c_box1_4.png"><img src="img/c_box1_s4.png" alt="" class="pl_img1_mr"></a>
+                    <h5>[ 너의 거실 ]  &emsp13;<span>천대광</span></h5>
+                </div>
+            </div>
+        </div>
+        <div class="project_right">
+            <div class="pr_left">
+                <div class="p_txt">
+                    <p>2017년</p>
+                    <h4>5회 안양공공예술프로젝트</h4>
+                    <h6>
+                        5회 안양공공예술프로젝트는(APAP5)는 지난 11년 동안 선보인 안양 공공예술프로젝트를 총화하고, 국내 최대 공공예술 축제의 면모 를 보여주며 회화, 조각 작품뿐만 아니라 미디어, 글쓰기, 영화, 패션, 사 운드, 퍼포먼스 등 다양한 장르로 진화한 공공예술을 선보였다. 무엇 보다도 시민과의 소통에 중심을 두고 있으며, 예술의 공공성을 높이는 시도를 통해 국내 공공예술이 나아가야 할 방향을 제시하였다.
+                    </h6>
+                </div>
+                <div class="pr_img pr_img1">
+                    <a href="img/c_box2_1.png"><img src="img/c_box2_s1.png" alt=""></a>
+                    <h5>[ 무문관 ] &emsp13;<span>최정화_한국 &emsp13;</span>[ 돌베개 정원 ] &emsp13;<span>크리스티나 김_미국</span></h5>
+                    <a href="img/c_box2_2.png"><img src="img/c_box2_s2.png" alt=""></a>
+                    <h5>[ 안양퍼블릭랩 ]  &emsp13;<span>하우스오브네추럴파이버_인도네시아</span></h5>
+                    <a href="img/c_box2_3.png"><img src="img/c_box2_s3.png" alt=""></a>
+                    <h5>[ 중간자 ]  &emsp13;<span>마이클주_미국</span></h5>
+                </div>
+            </div>
+            <div class="pr_right pr_right1">
+                <img src="img/c_box2_1.png" alt="">
+                <h5>[ 무문관 ] &emsp13;<span>최정화_한국 &emsp13;</span>[ 돌베개 정원 ] &emsp13;<span>크리스티나 김_미국</span></h5>
+            </div>
+        </div>
+        <div class="project_left project_left_mobile">
+            <div class="pl_left pl_left1">
+                <img src="img/c_box2_1.png" alt="">
+                <h5>[ 무문관 ] &emsp13;<span>최정화_한국 &emsp13;</span>[ 돌베개 정원 ] &emsp13;<span>크리스티나 김_미국</span></h5>
+            </div>
+            <div class="pl_right">
+                <div class="p_txt">
+                    <p>2017년</p>
+                    <h4>5회 안양공공예술프로젝트</h4>
+                    <h6>
+                        5회 안양공공예술프로젝트는(APAP5)는 지난 11년 동안 선보인 안양 공공예술프로젝트를 총화하고, 국내 최대 공공예술 축제의 면모 를 보여주며 회화, 조각 작품뿐만 아니라 미디어, 글쓰기, 영화, 패션, 사 운드, 퍼포먼스 등 다양한 장르로 진화한 공공예술을 선보였다. 무엇 보다도 시민과의 소통에 중심을 두고 있으며, 예술의 공공성을 높이는 시도를 통해 국내 공공예술이 나아가야 할 방향을 제시하였다.
+                    </h6>
+                </div>
+            </div>
+        </div>
+
+        <div class="project_left">
+            <div class="pl_left">
+                <img src="img/c_box3_1.png" alt="">
+                <h5>안양파빌리온</h5>
+            </div>
+            <div class="pl_right">
+                <div class="p_txt">
+                    <p>2013년 - 2014년</p>
+                    <h4>4회 안양공공예술프로젝트</h4>
+                    <h6>
+                        <span>‘퍼블릭 스토리(Public Story)’ </span>
+                        4회 APAP는 '모두를 향한 지식', '각자를 위한 이야기', '서로를 통한 듣기'라는 슬로건 하에 지난 APAP를 되돌아 보고 다시 이야기하기를 제안했다. 동시대 사람들의 마음과 생각을 무대로 삼아, 이번 APAP는 미술과 공공의 관계를 다채로운 이야기로 풀어내었으며 2013년 10월, 안양파빌리온을 공공예술과 시민이 만나는 공간으로 재구성하고, 국내외 작가의 새로운 공공예술 작업을 2014년 3월, 김중업건축 박물관을 비롯한 안양 곳곳에서 소개했다.
+                    </h6>
+                </div>
+            </div>
+        </div>
+        <div class="project_right">
+            <div class="pr_left">
+                <div class="p_txt">
+                    <p>2010년</p>
+                    <h4>3회 안양공공예술프로젝트</h4>
+                    <h6>
+                        3회 안양공공예술 프로젝트(APAP 2010)는 일시적이며 변화무쌍한 현대 도시 속에서 '새로운 지역사회'에 대하여 공유하고 이야기하고 프로젝트로 “새 동네_열린 도시 안에서” 란 주제로 시민, 지역사회 모임, 교육기관 및 사업체 및 그 밖의 사회, 문화, 경제 단체들과의 협력을 기반으로, 일반 시민들이 창조적 잠재력을 끌어내는 다양한 교육과 디자인 중심의 프로그램을 운영하였으며, 영구작품 4점이 설치되었다.
+                    </h6>
+                </div>
+                <div class="pr_img pr_img2">
+                    <a href="img/c_box4_1.png"><img src="img/c_box4_s1.png" alt=""></a>
+                    <h5>[ 오픈 스쿨 ]  &emsp13;<span>롯-텍_뉴욕 건축회사</span></h5>
+                    <a href="img/c_box4_2.png"><img src="img/c_box4_s2.png" alt=""></a>
+                    <h5>[ 2010만안 이미지-기록과 기억 ]  &emsp13;<span>대림미술관</span></h5>
+                    <a href="img/c_box4_3.png"><img src="img/c_box4_s3.png" alt=""></a>
+                    <h5>[ 2010만안 이미지-기록과 기억 ]  &emsp13;<span>대림미술관</span></h5>
+                </div>
+            </div>
+            <div class="pr_right pr_right2">
+                <img src="img/c_box4_1.png" alt="">
+                <h5>[ 오픈 스쿨 ] &emsp13;<span>롯-텍_뉴욕 건축회사</span></h5>
+            </div>
+        </div>
+        <div class="project_left project_left_mobile">
+            <div class="pl_left pl_left1">
+                <img src="img/c_box4_1.png" alt="">
+                <h5>[ 오픈 스쿨 ] &emsp13;<span>롯-텍_뉴욕 건축회사</span></h5>
+            </div>
+            <div class="pl_right">
+                <div class="p_txt">
+                    <p>2010년</p>
+                    <h4>3회 안양공공예술프로젝트</h4>
+                    <h6>
+                        3회 안양공공예술 프로젝트(APAP 2010)는 일시적이며 변화무쌍한 현대 도시 속에서 '새로운 지역사회'에 대하여 공유하고 이야기하고 프로젝트로 “새 동네_열린 도시 안에서” 란 주제로 시민, 지역사회 모임, 교육기관 및 사업체 및 그 밖의 사회, 문화, 경제 단체들과의 협력을 기반으로, 일반 시민들이 창조적 잠재력을 끌어내는 다양한 교육과 디자인 중심의 프로그램을 운영하였으며, 영구작품 4점이 설치되었다.
+                    </h6>
+                </div>
+            </div>
+        </div>
+
+        <div class="project_left">
+            <div class="pl_left pl_left2">
+                <img src="img/c_box5_1.png" alt="">
+                <h5>[ 비토 ] &emsp13;<span>실비 플뢰리_스위스</span></h5>
+            </div>
+            <div class="pl_right">
+                <div class="p_txt">
+                    <p>2007년</p>
+                    <h4>2회 안양공공예술프로젝트</h4>
+                    <h6>
+                        2회 안양공공예술프로젝트는 평촌에 거주하는 지역 구성원들을 위한 프로젝트로서 현대 미술을 통하여 도시의 의미를 재발견하고자 하였다. 이를 통해 도시의 정체성과 환경을 재생하고, 도시 환경을 새롭게 만들어 내고자 신도시의 공원과 도심을 중심으로 “전유, 재생, 전환”이란 주제로 영구작품 36점이 설치되었다.
+                    </h6>
+                </div>
+                <div class="pl_img pl_img2">
+                    <a href="img/c_box5_1.png"><img src="img/c_box5_s1.png" alt=""></a>
+                    <h5>[ 비토 ]  &emsp13;<span>실비 플뢰리_스위스</span></h5>
+                    <a href="img/c_box5_2.png"><img src="img/c_box5_s2.png" alt=""></a>
+                    <h5>[ 헬로, 안양 위드 러브 ]  &emsp13;<span>야요이 쿠사마_일본</span></h5>
+                </div>
+            </div>
+        </div>
+        <div class="project_right">
+            <div class="pr_left">
+                <div class="p_txt">
+                    <p>2005년</p>
+                    <h4>1회 안양공공예술프로젝트</h4>
+                    <h6>
+                        1회 안양공공예술프로젝트는 도시 개발 속에서 기성세대들에게 잊혀져가는 장소에 대한 기억을 되살리고, 젊은 세대들에게는 꿈과 자유의 감각을 느낄 수 있는 문화적 공간을 조성하기 위한 장소로 안양유원지를 선정하여 “역동적 균형”이란 주제로 영구작품 52점의 작품이 설치되었다. 주요 설치 작품은 <안양파빌리온>, <전망대> 등이 있다.
+                    </h6>
+                </div>
+                <div class="pr_img pr_img3">
+                    <a href="img/c_box6_1.png"><img src="img/c_box6_s1.png" alt=""></a>
+                    <h5>[ 안양파빌리온 ]  &emsp13;<span>알바루 시자 비에이라_포르투칼</span></h5>
+                    <a href="img/c_box6_2.png"><img src="img/c_box6_s2.png" alt=""></a>
+                    <h5>[ 전망대 ]  &emsp13;<span>MVRDV_네덜란드</span></h5>
+                </div>
+            </div>
+            <div class="pr_right pr_right3">
+                <img src="img/c_box6_1.png" alt="">
+                <h5>[ 안양파빌리온 ] &emsp13;<span>알바루 시자 비에이라_포르투칼</span></h5>
+            </div>
+        </div>
+        <div class="project_left project_left_mobile">
+            <div class="pl_left pl_left1">
+                <img src="img/c_box6_1.png" alt="">
+                <h5>[ 안양파빌리온 ] &emsp13;<span>알바루 시자 비에이라_포르투칼</span></h5>
+            </div>
+            <div class="pl_right">
+                <div class="p_txt">
+                    <p>2005년</p>
+                    <h4>1회 안양공공예술프로젝트</h4>
+                    <h6>
+                        1회 안양공공예술프로젝트는 도시 개발 속에서 기성세대들에게 잊혀져가는 장소에 대한 기억을 되살리고, 젊은 세대들에게는 꿈과 자유의 감각을 느낄 수 있는 문화적 공간을 조성하기 위한 장소로 안양유원지를 선정하여 “역동적 균형”이란 주제로 영구작품 52점의 작품이 설치되었다. 주요 설치 작품은 <안양파빌리온>, <전망대> 등이 있다.
+                    </h6>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <section id="footer_wrap">
+            <img src="img/logo_black.png" alt="">
+            <div id="f_box1">
+                <ul>
+                    <li>(우 14093) 경기도 안양시 만안구 문예로36번길 16 (안양동) <br>
+                        <span>전화</span> 031.687.0500 <span>팩스</span> 031.689.5000</li>
+                    <li>Copyright ⓒ 2016 Anyang Foundation for Culture&Arts. All Rights Reserved.</li>
+                </ul>
+            </div>
+            <div id="f_box2">
+                    <!-- <h6>운영기관 바로가기</h6>
+                    <a href="#"><img src="img/down_arrow.png" alt=""></a> -->
+                <div id="footer_box">
+                    <select name="" id="">
+                        <option value>운영기관 바로가기</option>
+                        <option value="안양문화예술재단">안양문화예술재단</option>
+                        <option value="안양아트센터">안양아트센터</option>
+                        <option value="평촌아트홀">평촌아트홀</option>
+                        <option value="안양파빌리온">안양파빌리온</option>
+                        <option value="안양박물관">안양박물관</option>
+                        <option value="김중업건축박물관">김중업건축박물관</option>
+                    </select>
+                </div>
+                
+                <div id="f_txt">
+                    <a href="#"><p class="fTxtRight"><span>개인정보처리방침</span></p></a>
+                    <img src="img/footer_bar.png" alt="">
+                    <a href="#"><p class="fTxtLeft">개인정보위탁현황</p></a>
+                </div>
+            </div>
+        </section>
+    </footer>
+
+
+</body>
+</html>
