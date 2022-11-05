@@ -62,7 +62,7 @@ main{
     height: 100%;
 }
 .right_wrap1 h5{
-    font-size: var(--fonsize_Ss);
+    font-size: var(--fontsize_Ss);
     font-family: 'ELAND_Choice_B';
     color: var(--mainC_Y);
     margin-top: 20px;
@@ -173,7 +173,7 @@ main{
     margin-right: 4%;
 }
 .left_wrap2 h5{
-    font-size: var(--fonsize_Ss);
+    font-size: var(--fontsize_Ss);
     font-family: 'ELAND_Choice_B';
     color: var(--mainC_Y);
     margin-top: 20px;
@@ -194,7 +194,7 @@ main{
     margin-top: 45px;
 }
 .left_wrap2 p{
-    font-size: var(--fonsize_Ss);
+    font-size: var(--fontsize_Ss);
     font-family: 'ELAND_Choice_L';
     margin-top: 20px;
     text-align: justify;
@@ -259,7 +259,7 @@ main{
     height: 100%;
 }
 .right_wrap3 h5{
-    font-size: var(--fonsize_Ss);
+    font-size: var(--fontsize_Ss);
     font-family: 'ELAND_Choice_B';
     color: var(--mainC_Y);
     margin-top: 20px;
@@ -280,7 +280,7 @@ main{
     margin-top: 45px;
 }
 .right_wrap3 p{
-    font-size: var(--fonsize_Ss);
+    font-size: var(--fontsize_Ss);
     font-family: 'ELAND_Choice_L';
     margin-top: 20px;
     text-align: justify;
@@ -372,7 +372,7 @@ main{
         margin-top: 28%;
     }
     .right_wrap1 h5{
-        font-size: var(--fonsize_Ss);
+        font-size: var(--fontsize_Ss);
         margin-top: 20px;
     }
     .right_wrap1 h2{
@@ -451,7 +451,7 @@ main{
         margin-top: 28%;
     }
     .left_wrap2 h5{
-        font-size:  var(--fonsize_Ss);
+        font-size:  var(--fontsize_Ss);
         margin-top: 20px;
     }
     .left_wrap2 h2{
@@ -531,7 +531,7 @@ main{
         margin-top: 28%;
     }
     .right_wrap3 h5{
-        font-size:  var(--fonsize_Ss);
+        font-size:  var(--fontsize_Ss);
         margin-top: 20px;
     }
     .right_wrap3 h2{

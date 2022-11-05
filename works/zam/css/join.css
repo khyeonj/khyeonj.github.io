@@ -34,7 +34,7 @@ main{
 
 }
 .join_title_box{
-    width: 50%;
+    width: 100%;
     height: 9vh;
     margin: 0 auto;
     text-align: center;
@@ -131,7 +131,7 @@ label input{
 .agree_list{
     width: 70%;
     height: 80%;
-    font-size: var(--fonsize_Ss);
+    font-size: var(--fontsize_Ss);
     font-family: 'ELAND_Choice_L';
     margin-top: 30px;
 }
@@ -380,20 +380,20 @@ footer{
     }
     .error_next_box{
         width: 100%;
-        font-size: var(--fonsize_Ss);
+        font-size: var(--fontsize_Ss);
     }
     label input{
         width: 50%;
         height: 40px;
         margin-right: 5%;
-        font-size: var(--fonsize_Ss);
+        font-size: var(--fontsize_Ss);
     }
     .agree_title{
         width: 30%;
         margin-left: 0;
         margin-top: 35px;
         margin-right: 5%;
-        font-size: var(--fonsize_S);
+        font-size: var(--fontsize_S);
     }
     .agree_list input[type="checkbox"] + label h4{
         font-size:1.6rem;
@@ -404,7 +404,7 @@ footer{
     .agree_list li:nth-child(2) h4, .agree_list li:nth-child(3) h4, .agree_list li:nth-child(4) h4{
         width: 45%;
     }
-    .gray{font-size: var(--fonsize_Ss);}
+    .gray{font-size: var(--fontsize_Ss);}
     .confirm{
         width: 25%;
         height: 40px;

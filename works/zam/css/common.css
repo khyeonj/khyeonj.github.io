@@ -105,19 +105,20 @@ img {
 nav {
   width: 100%;
   height: 100%;
-  padding: 10%;
+  padding: 14px;
   border: 5px solid #000;
 }
 .gnb {
   display: flex;
   flex-direction: column;
   padding-top: 30%;
-  margin-left: 11%;
+  /* margin-left: 11%; */
   height: 80%;
+  text-align: center;
 }
 .gnb > li > a {
   display: block;
-  padding: 6%;
+  padding: 7px;
   margin-top: 25%;
 }
 .gnb li ul {
@@ -228,7 +229,7 @@ footer {
   font-family: "ELAND_Nice_M";
 }
 small{
-  font-size: var(--fonsize_Ss);
+  font-size: var(--fontsize_Ss);
   line-height: 2.5rem;
 }
 
