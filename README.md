@@ -16,11 +16,7 @@
 
 # :mag: Works
 
-## 1. [리디자인] 서울탁주 
-
-![Github](http://img.shields.io/badge/-Github-000000?style=flat-square&logo=github&link=[https://github.com/khyeonj/Algorithm/](https://github.com/khyeonj/Algorithm))
-
-<a href="[링크](https://github.com/khyeonj/Algorithm)"><img src="https://img.shields.io/badge/Github-000000?style=flat-square&logo=Github&logoColor=white"/></a>
+## 1. [리디자인] 서울탁주 &nbsp;<a href="https://github.com/khyeonj/Algorithm"><img src="https://img.shields.io/badge/Github-000000?style=flat-square&logo=Github&logoColor=white"/></a>
 
 <center>
     <img src="./README.assets/1.png" alt="서울탁주"/>
