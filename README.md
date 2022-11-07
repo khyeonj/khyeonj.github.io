@@ -1,8 +1,8 @@
-<h1 align="center">SYNERGY</h1>
-<p>
-</p>
+<center>
+    <img src="./README.assets/0.png" alt="SYNERGY"/>
+</center>
 
-> 이거 포폴 깃허브 링크걸기 <br>
+이거 포폴 링크걸기 <br>
 
 <br>
 
@@ -13,8 +13,12 @@
 > 후르츠링, 앱솔루트 프로모션 페이지<br>
 > 총 7개의 작업물로 이루어진 포트폴리오 페이지입니다.
 
+<br>
+
 
 # :mag: Works
+
+<br>
 
 ## 1. [리디자인] 서울탁주 &nbsp;<a href="https://github.com/khyeonj/Algorithm"><img src="https://img.shields.io/badge/Github-000000?style=flat-square&logo=Github&logoColor=white"/></a>
 
