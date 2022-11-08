@@ -1,5 +1,5 @@
 *{margin: 0; padding: 0; box-sizing: border-box;}
-body{font-family: 'Noto Sans KR', sans-serif;color: var(--font-color);}
+body{font-family: 'Noto Sans KR', sans-serif;color: var(--font-color);overflow-y: hidden;}
 img{border: 0;}
 li{list-style: none;}
 
