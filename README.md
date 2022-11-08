@@ -2,8 +2,11 @@
     <img src="./README.assets/main.png" alt="SYNERGY"/>
 </center>
 
-이거 포폴 링크걸기 <br>
+<a href="https://khyeonj.github.io/">
+    <img src="https://img.shields.io/badge/👉어디서나 긍정적인 시너지를 내는 김현정의 포트폴리오 보러가기👈-000000?style=flat-square"/>
+</a>
 
+<br>
 <br>
 
 # ✨ Description
@@ -17,8 +20,6 @@
 
 
 # :mag: Works
-
-<br>
 
 ## 1. [리디자인] 서울탁주 &nbsp;<a href="https://github.com/khyeonj/Seoul-Takju"><img src="https://img.shields.io/badge/Github-000000?style=flat-square&logo=Github&logoColor=white"/></a>
 
@@ -39,7 +40,7 @@
 ## 2. [리디자인] 안양문화예술재단 &nbsp;<a href="https://github.com/khyeonj/Anyang-Culture-and-Arts-Foundation"><img src="https://img.shields.io/badge/Github-000000?style=flat-square&logo=Github&logoColor=white"/></a>
 
 <center>
-    <img src="./README.assets/2.png" alt="안양문화예술재단"/>
+    <img src="./README.assets/anyang.png" alt="안양문화예술재단"/>
 </center>
 
 ### :pushpin: Overview
@@ -54,7 +55,7 @@
 ## 3. [리디자인] SK-Ⅱ &nbsp;<a href="https://github.com/khyeonj/SK-2"><img src="https://img.shields.io/badge/Github-000000?style=flat-square&logo=Github&logoColor=white"/></a>
 
 <center>
-    <img src="./README.assets/3.png" alt="SK-Ⅱ"/>
+    <img src="./README.assets/sk2.png" alt="SK-Ⅱ"/>
 </center>
 
 ### :pushpin: Overview
@@ -69,7 +70,7 @@
 ## 4. [브랜딩] 델리라또 &nbsp;<a href="https://github.com/khyeonj/Delilato"><img src="https://img.shields.io/badge/Github-000000?style=flat-square&logo=Github&logoColor=white"/></a>
 
 <center>
-    <img src="./README.assets/4.png" alt="델리라또"/>
+    <img src="./README.assets/delilato.png" alt="델리라또"/>
 </center>
 
 ### :pushpin: Overview
@@ -82,7 +83,7 @@
 ## 5. [브랜딩] 잼이꾸덕 &nbsp;<a href="https://github.com/khyeonj/Zamikkudeok"><img src="https://img.shields.io/badge/Github-000000?style=flat-square&logo=Github&logoColor=white"/></a>
 
 <center>
-    <img src="./README.assets/5.png" alt="잼이꾸덕"/>
+    <img src="./README.assets/zam.png" alt="잼이꾸덕"/>
 </center>
 
 ### :pushpin: Overview
@@ -97,7 +98,7 @@
 ## 6. [프로모션 페이지] 후르츠링 &nbsp;<a href="https://github.com/khyeonj/Froot-ring"><img src="https://img.shields.io/badge/Github-000000?style=flat-square&logo=Github&logoColor=white"/></a>
 
 <center>
-    <img src="./README.assets/6.png" alt="후르츠링"/>
+    <img src="./README.assets/froot_ring.png" alt="후르츠링"/>
 </center>
 
 <br>
@@ -105,7 +106,7 @@
 ## 7. [프로모션 페이지] 앱솔루트 &nbsp;<a href="https://github.com/khyeonj/Absoulte"><img src="https://img.shields.io/badge/Github-000000?style=flat-square&logo=Github&logoColor=white"/></a>
 
 <center>
-    <img src="./README.assets/7.png" alt="앱솔루트"/>
+    <img src="./README.assets/absoulte.png" alt="앱솔루트"/>
 </center>
 
 
