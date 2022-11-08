@@ -1,5 +1,5 @@
 <center>
-    <img src="./README.assets/0.png" alt="SYNERGY"/>
+    <img src="./README.assets/main.png" alt="SYNERGY"/>
 </center>
 
 이거 포폴 링크걸기 <br>
@@ -20,10 +20,10 @@
 
 <br>
 
-## 1. [리디자인] 서울탁주 &nbsp;<a href="https://github.com/khyeonj/Algorithm"><img src="https://img.shields.io/badge/Github-000000?style=flat-square&logo=Github&logoColor=white"/></a>
+## 1. [리디자인] 서울탁주 &nbsp;<a href="https://github.com/khyeonj/Seoul-Takju"><img src="https://img.shields.io/badge/Github-000000?style=flat-square&logo=Github&logoColor=white"/></a>
 
 <center>
-    <img src="./README.assets/1.png" alt="서울탁주"/>
+    <img src="./README.assets/jagsu.png" alt="서울탁주"/>
 </center>
 
 ### :pushpin: Overview
@@ -36,7 +36,7 @@
 
 <br>
 
-## 2. [리디자인] 안양문화예술재단 
+## 2. [리디자인] 안양문화예술재단 &nbsp;<a href="https://github.com/khyeonj/Anyang-Culture-and-Arts-Foundation"><img src="https://img.shields.io/badge/Github-000000?style=flat-square&logo=Github&logoColor=white"/></a>
 
 <center>
     <img src="./README.assets/2.png" alt="안양문화예술재단"/>
@@ -51,7 +51,7 @@
 
 <br>
 
-## 3. [리디자인] SK-Ⅱ
+## 3. [리디자인] SK-Ⅱ &nbsp;<a href="https://github.com/khyeonj/SK-2"><img src="https://img.shields.io/badge/Github-000000?style=flat-square&logo=Github&logoColor=white"/></a>
 
 <center>
     <img src="./README.assets/3.png" alt="SK-Ⅱ"/>
@@ -66,7 +66,7 @@
   > 
 <br>
 
-## 4. [브랜딩] 델리라또
+## 4. [브랜딩] 델리라또 &nbsp;<a href="https://github.com/khyeonj/Delilato"><img src="https://img.shields.io/badge/Github-000000?style=flat-square&logo=Github&logoColor=white"/></a>
 
 <center>
     <img src="./README.assets/4.png" alt="델리라또"/>
@@ -79,7 +79,7 @@
 
 <br>
 
-## 5. [브랜딩] 잼이꾸덕
+## 5. [브랜딩] 잼이꾸덕 &nbsp;<a href="https://github.com/khyeonj/Zamikkudeok"><img src="https://img.shields.io/badge/Github-000000?style=flat-square&logo=Github&logoColor=white"/></a>
 
 <center>
     <img src="./README.assets/5.png" alt="잼이꾸덕"/>
@@ -94,7 +94,7 @@
 
 <br>
 
-## 6. [프로모션 페이지] 후르츠링
+## 6. [프로모션 페이지] 후르츠링 &nbsp;<a href="https://github.com/khyeonj/Froot-ring"><img src="https://img.shields.io/badge/Github-000000?style=flat-square&logo=Github&logoColor=white"/></a>
 
 <center>
     <img src="./README.assets/6.png" alt="후르츠링"/>
@@ -102,7 +102,7 @@
 
 <br>
 
-## 7. [프로모션 페이지] 앱솔루트
+## 7. [프로모션 페이지] 앱솔루트 &nbsp;<a href="https://github.com/khyeonj/Absoulte"><img src="https://img.shields.io/badge/Github-000000?style=flat-square&logo=Github&logoColor=white"/></a>
 
 <center>
     <img src="./README.assets/7.png" alt="앱솔루트"/>
