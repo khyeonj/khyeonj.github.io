@@ -327,7 +327,7 @@
 
     .circle{border-radius: 5px;margin-right: 10px;}
     #notice_bar{width: 55%;}
-    #notice_box{justify-content: space-between;}
+    #notice_box, #press_box{justify-content: space-between;}
 
     #notice_box div:last-child,#press_box div:last-child{display: none;}
 
