@@ -2,9 +2,13 @@
     <img src="./README.assets/main.png" alt="SYNERGY"/>
 </center>
 
-<a href="https://khyeonj.github.io/">
-    <img src="https://img.shields.io/badge/👉어디서나 긍정적인 시너지를 내는 김현정의 포트폴리오 보러가기👈-000000?style=flat-square"/>
-</a>
+<br>
+<div align="center">
+    <a href="https://khyeonj.github.io/">
+        <img src="https://img.shields.io/badge/👉어디서나 긍정적인 시너지를 내는 김현정의 포트폴리오 보러가기👈-000000?style=flat-square"/>
+    </a>
+</div>
+
 
 <br>
 <br>
