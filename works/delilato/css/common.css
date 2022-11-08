@@ -88,7 +88,10 @@ footer{
     margin-top: 39px;
     color: #fff;
 }
-#left ul,#left li{display: flex;}
+#left ul,#left li{
+    display: flex;
+    align-items: baseline;
+}
 
 #ADDRESS h1, #TEL h1{
     font-size: 22px;
@@ -97,7 +100,6 @@ footer{
 }
 #ADDRESS p, #TEL p{
     font-size: 14px;
-    margin-top: 10px;
 }
 
 #sns img{padding-right: 10px;}
