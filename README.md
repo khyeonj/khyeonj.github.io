@@ -1,3 +1,4 @@
+<br>
 <center>
     <img src="./README.assets/main.png" alt="SYNERGY"/>
 </center>
