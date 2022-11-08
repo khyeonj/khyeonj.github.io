@@ -224,7 +224,7 @@ main{
 }
 /* section4 end */
 
-@media screen and (max-width:767px){
+@media screen and (max-width:800px){
     body{min-width: 367px;}
     .gnb_wrap, .top{display: none;}
     

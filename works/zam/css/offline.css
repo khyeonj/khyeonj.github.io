@@ -91,7 +91,7 @@ main{
 }
 .map_btn{
     display: block;
-    width: 48.5%;
+    width: 250px;
     height: 60px;
     padding: 20px;
     background: var(--mainC_P);
@@ -99,9 +99,7 @@ main{
     font-size: var(--fontsize_Ms);
     font-family: 'ELAND_Choice_M';
     text-align: center;
-}
-.map_btn1{
-    margin-top:75px;
+    margin-top:90px;
 }
 .map_view{
     display: none;
@@ -218,9 +216,7 @@ main{
 .right_wrap2 img{
     width: 100%;
 }
-.map_btn2{
-    margin-top: 81px;
-}
+
 /* section2 end */
 
 .section3{
@@ -285,20 +281,6 @@ main{
     margin-top: 20px;
     text-align: justify;
     line-height: 170%;
-}
-.map_btn{
-    display: block;
-    width: 48.5%;
-    height: 60px;
-    padding: 20px;
-    background: var(--mainC_P);
-    color: #fff;
-    font-size: var(--fontsize_M);
-    font-family: 'ELAND_Choice_M';
-    text-align: center;
-}
-.map_btn3{
-    margin-top: 105px;
 }
 
 
@@ -473,9 +455,6 @@ main{
     }
     .map_btn{
         font-size: 16px;
-    }
-    .map_btn2{
-        margin-top: 34px;
     }
     /* section2A end */
 

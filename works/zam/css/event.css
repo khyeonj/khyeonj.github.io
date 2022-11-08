@@ -38,10 +38,10 @@ main{
 }
 .m_banner_wrap{display: none;}
 
-@media screen and (max-width:767px){
+@media screen and (max-width:800px){
 
     body{min-width: 367px;}
-    .gnb_wrap, .top{display: none;}
+    .top{display: none;}
     
     main{padding: 0; margin-bottom: 50px;}
     .title{
